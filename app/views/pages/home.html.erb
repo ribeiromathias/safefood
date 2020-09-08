@@ -1,3 +1,30 @@
+<div class="layout-background">
 
 
+  <div>
+
+<%= form_tag root_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+
+    placeholder: "Search food near me"
+  %>
+  <%= submit_tag "Search", class: "btn btn-success" %>
+<% end %>
+</div>
+<!-- A grid for the cards-meals -->
+  <div class="cards-meals">
+      <div class="card" >
+        Meal1
+      </div>
+      <div class="card" >
+        Meal2
+      </div>
+      <div class="card" >
+        Meal3
+      </div>
+  </div>
+
+</div>
 
