@@ -6,14 +6,14 @@
     <% @meals.each do |meal| %>
       <%= link_to meal do %>
         <div class="card-meal">
-         <!-- cloudinary --> 
+         <%= cl_image_tag(meal.photo.key) %>   <!-- check the comment down and see where u can replace-->
           <div class="card-meal-infos">
             <div>
               <h2 class="card-meal-pricing">$ <%= meal.offer_price %></h2>
               <h2><%= meal.name %></h2>
               <h2><%= meal.description %></h2>
               <h2><%= meal.restriction %></h2>
-              <!-- cloudinary --> 
+              <!-- cloudinary photo can be put here alternatively check it out --> 
             </div>
             <div class="card-meal-user">
               <p><em><%= meal.user.name %></em></p>
