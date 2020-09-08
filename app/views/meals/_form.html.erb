@@ -1,0 +1,14 @@
+<%= simple_form_for meal do |f| %>
+
+   <%= f.input :name %>
+   <%= f.input :offer_price %>
+   <%= f.input :description %>
+    <%= f.input :restriction %>
+   <%= f.input :photo, as: :file, class:"btn-buzz" %>
+    
+   <div class="form-actions">
+        <%= f.button :submit, class: "btn" %>
+   </div>
+
+<% end %>
+
