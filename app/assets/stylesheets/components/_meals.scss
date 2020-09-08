@@ -1,0 +1,45 @@
+
+.cards-meals {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 8px;
+  background-color: white;
+  padding: 8px;
+}
+
+.layout-background {
+  background-image: asset-url('food-background.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+
+
+.card {
+  //remove asset-url once the cards will be sent here from the controller
+  background-image: asset-url('dish1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  border-radius: 1px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 22px;
+  color: white;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+@media(max-width: 992px) {
+  .cards-meals {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .cards-meals {
+    grid-template-columns: 1fr 1fr;
+  }
+}
