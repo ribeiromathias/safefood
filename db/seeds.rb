@@ -35,26 +35,24 @@ marcel.save!
 
 puts "user created... meals for sellers..."
 
-file = URI.open('some foto')
+file = URI.open('https://i.ytimg.com/vi/xCc2Qn4vxt4/maxresdefault.jpg')
 celiac_focaccia = Meal.new
-celiac_focaccia.user = user_one
+celiac_focaccia.user = matheus
 celiac_focaccia.name
 celiac_focaccia.offer_price
 celiac_focaccia.description
 celiac_focaccia.restriction
-celiac_focaccia.save!  # why before
-celiac_focaccia.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+celiac_focaccia.photo.attach(io: file, filename: 'nes.png')
+celiac_focaccia.save!
 
 puts "user created... meals for buyer..."
 
-file = URI.open('some foto')
+file = URI.open('https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/dark-chocolate-1296x728-header.jpg?w=1155&h=1528')
 chocolate_for_diabetics = Meal.new
+chocolate_for_diabetics.user = marcel
 chocolate_for_diabetics.name
 chocolate_for_diabetics.offer_price
 chocolate_for_diabetics.description
 chocolate_for_diabetics.restriction
+chocolate_for_diabetics.photo.attach(io: file, filename: 'nes.png')
 chocolate_for_diabetics.save!
-chocolate_for_diabetics.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-
-# cloudinary
-# meal.photo.attach(io: open('https://banner2.cleanpng.com/20190111/fci/kisspng-rick-sanchez-clip-art-telegram-illustration-sticke-telegram-ampq-5c38a02c3ff6e4.644130331547214892262.jpg'), filename: 'rick.jpg')
