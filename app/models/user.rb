@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :orders, dependent: :nullify
   has_many :delivery_schedules
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
 end
