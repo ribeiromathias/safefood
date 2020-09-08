@@ -38,8 +38,10 @@ class MealsController < ApplicationController
     end
   end
 
-  def destroy
-    
+  def destroy 
+    @meal = Meal.find(params[:id])
+    @meal.destroy
+    redirect_to meals_path
   end
 
   private

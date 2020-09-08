@@ -1,2 +1,29 @@
-<h1>Meals#index</h1>
-
+<div class="container" style="margin-bottom: 50px">
+  <%unless user_signed_in?%>
+  <h1 class="text-center call-to-action">Browse through our wonderful selection of foods!</h1>
+  <%end%>
+  <div class="cards">
+    <% @meals.each do |meal| %>
+      <%= link_to meal do %>
+        <div class="card-meal">
+         <!-- cloudinary --> 
+          <div class="card-meal-infos">
+            <div>
+              <h2 class="card-meal-pricing">$ <%= meal.offer_price %></h2>
+              <h2><%= meal.name %></h2>
+              <h2><%= meal.description %></h2>
+              <h2><%= meal.restriction %></h2>
+              <!-- cloudinary --> 
+            </div>
+            <div class="card-meal-user">
+              <p><em><%= meal.user.name %></em></p>
+              <p><em><%= meal.user.phone_number %></em></p>
+              <p><em><%= meal.user.email %></em></p>
+              <p><em><%= meal.user.address %></em></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
