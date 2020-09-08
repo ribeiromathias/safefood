@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # devise gemfile
 gem 'devise'
+
+# cloudinary
+gem 'dotenv-rails', groups: [:development, :test]
