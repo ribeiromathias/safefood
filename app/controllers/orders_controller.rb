@@ -1,11 +1,11 @@
 class OrdersController < ApplicationController
   
   def show
-    @order = Order.find(params[:id]) #what's the difference between (params[:orders_id])
+    @order = Order.find(params[:id]) 
   end
 
   def index
-    @orders = Order.all.order('name ASC')
+    @active_order = current_user.orders.find_by(status: "open")
   end
 
   def update

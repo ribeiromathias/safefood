@@ -1,2 +1,12 @@
-<h1>Orders#index</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
+<% if @active_order.present? %>
+  <ul> 
+
+    <% @active_order.order_items.each do |order_item| %>
+      <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price * order_item.quantity} " %> </li>
+    <% end %>
+
+  </ul>
+
+<% else %>
+  <h2> No meals in your cart yet </h2>
+<% end %>

@@ -53,7 +53,6 @@ celiac_focaccia.restriction = "Gluten-free"
 celiac_focaccia.photo.attach(io: file, filename: 'nes.png')
 celiac_focaccia.save!
 
-puts "user created... meals for buyer..."
 
 file = URI.open('https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/dark-chocolate-1296x728-header.jpg?w=1155&h=1528')
 chocolate_for_vegan = Meal.new

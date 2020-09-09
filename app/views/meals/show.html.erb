@@ -4,4 +4,9 @@
 <%= @meal.description %>
 <%= @meal.restriction %>
 
+<%= simple_form_for [@meal, OrderItem.new] do |f| %>
+  <%= f.input :quantity %>
+  <%= f.submit "Add to cart" %>
+<% end %>
+
 
