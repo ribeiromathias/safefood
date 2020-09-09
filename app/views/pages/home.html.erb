@@ -19,16 +19,14 @@
 <!-- A grid for the cards-meals -->
 
   <div class="cards-meals">
+    <% @meals.each do |meal|%>
+      <%= link_to meal_path(meal) do %>
+        <div class="card" >
+          <%= meal.name %>
+        </div>
+      <% end %>
+    <% end %>
 
-      <div class="card" >
-        Meal1
-      </div>
-      <div class="card" >
-        Meal2
-      </div>
-      <div class="card" >
-        Meal3
-      </div>
   </div>
 
 </div>
