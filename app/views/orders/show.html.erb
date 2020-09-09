@@ -1,2 +1,9 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<h1>My orders</h1>
+<%= @order.order_item.meal.name %>
+<%= @order.total_price %>
+<%= @order.status %>
+
+<%= simple_form_for [@meal, OrderItem.new] do |f| %>
+  <%= f.input :quantity %>
+  <%= f.submit "Add to cart" %>
+<% end %>
