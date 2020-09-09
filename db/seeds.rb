@@ -47,7 +47,7 @@ file = URI.open('https://i.ytimg.com/vi/xCc2Qn4vxt4/maxresdefault.jpg')
 celiac_focaccia = Meal.new
 celiac_focaccia.user = matheus
 celiac_focaccia.name = "Gluten free focaccia"
-celiac_focaccia.offer_price = 300
+celiac_focaccia.offer_price = 3
 celiac_focaccia.description = "This gluten free rosemary focaccia is made entirely gluten free"
 celiac_focaccia.restriction = "Gluten-free"
 celiac_focaccia.photo.attach(io: file, filename: 'nes.png')
@@ -59,7 +59,7 @@ file = URI.open('https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/0
 chocolate_for_vegan = Meal.new
 chocolate_for_vegan.user = marcel
 chocolate_for_vegan.name = "Amazing vegan chocolate"
-chocolate_for_vegan.offer_price = 200
+chocolate_for_vegan.offer_price = 2
 chocolate_for_vegan.description = "These chocolate bars are made with vegan ingredients: cacao, coconut milk, maple syrup and salt."
 chocolate_for_vegan.restriction = "Vegan"
 chocolate_for_vegan.photo.attach(io: file, filename: 'nes.png')
