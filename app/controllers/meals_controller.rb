@@ -41,12 +41,12 @@ class MealsController < ApplicationController
   def destroy 
     @meal = Meal.find(params[:id])
     @meal.destroy
-    redirect_to meals_path
+    redirect_to orders_path
   end
 
   private
-    def meal_params
-        params.require(:meal).permit(:name, :offer_price, :description, :restriction, :photo)
+  def meal_params
+    params.require(:meal).permit(:name, :offer_price, :description, :restriction, :photo)
   end 
 
 end
