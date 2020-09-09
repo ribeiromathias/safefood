@@ -12,7 +12,7 @@ puts "destroying all users and meals..."
 User.destroy_all
 Meal.destroy_all
 
-puts "Instances destroyed... Creating new seller user"
+puts "Instances destroyed... Creating new seller users"
 
 matheus = User.new
 matheus.name = 'Matheus'
@@ -23,8 +23,6 @@ matheus.password = "123456"
 matheus.save!
 
 
-puts "Instances destroyed... Creating new seller user"
-
 marcel = User.new
 marcel.name = 'marcel'
 marcel.phone_number = "87654321"
@@ -32,6 +30,16 @@ marcel.address = "Rio de janeiro"
 marcel.email = 'marcel@gmail.com'
 marcel.password = "123456"
 marcel.save!
+
+puts "Instances destroyed... Creating new buyer user"
+
+milene = User.new
+milene.name = 'milene'
+milene.phone_number = "12348765"
+milene.address = "Rio de janeiro"
+milene.email = 'milene@gmail.com'
+milene.password = "123456"
+milene.save!
 
 puts "user created... meals for sellers..."
 
