@@ -13,10 +13,17 @@ class DeliverySchedulesController < ApplicationController
     @delivery_schedule.user = current_user
 
     if @delivery_schedule.save
-      redirect_to delivery_schedule_path(@delivery_schedule)
+      redirect_to delivery_schedules_path
     else
       render :new
     end
+  end
+
+  def destroy
+    @delivery_schedule = DeliverySchedule.find(params[:id])
+    @delivery_schedule.destroy
+
+    redirect_to delivery_schedules_path
   end
 
 
