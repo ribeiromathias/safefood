@@ -1,0 +1,16 @@
+
+<div class="container d-flex">
+  <div class="cards">
+  <%= link_to 'Go back', new_delivery_schedule_path %>
+    <h2>Delivery Day</h2>
+    <% @delivery_schedules.each do |delivery_schedule| %>
+      <p><%= delivery_schedule.day %></p>
+      <p><%= link_to 'Delete',
+            delivery_schedule,
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "delete_day" %></p>
+    <% end %>
+  </div>
+</div>
+
