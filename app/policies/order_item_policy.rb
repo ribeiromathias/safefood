@@ -3,15 +3,14 @@ class OrderItemPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-
-    def create
-      
-    end
-
-    def destroy
-      
-    end
-    
-    
   end
+
+  def create?
+    true
+  end
+
+  def destroy?
+    record.order.user == user
+  end
+
 end

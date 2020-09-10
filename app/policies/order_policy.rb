@@ -4,4 +4,13 @@ class OrderPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def show?
+    record.user == user
+  end
+
+  def update?
+    record.user == user
+  end
+
 end
