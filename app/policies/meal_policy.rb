@@ -3,30 +3,29 @@ class MealPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-    def show?
-      true
-    end
+  def show?
+    true
+  end
 
-    def new?
-      true
-    end
+  def new?
+    true
+  end
 
-    def create?
-      true
-    end
+  def create?
+    true
+  end
 
-    def edit?
+  def edit?
     update?
-    end
-  
-    def update?
-      record.user == user
-    end
+  end
 
-    def destroy?
-      update?
-    end
+  def update?
+    record.user == user
+  end
 
+  def destroy?
+    update?
   end
 end
