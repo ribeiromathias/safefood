@@ -1,0 +1,12 @@
+<% if @active_order.present? %>
+  <ul> 
+
+    <% @active_order.order_items.each do |order_item| %>
+      <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price * order_item.quantity} " %> </li>
+    <% end %>
+
+  </ul>
+
+<% else %>
+  <h2> No meals are present in your cart! Please add them </h2>
+<% end %>

@@ -53,7 +53,6 @@ celiac_focaccia.restriction = "Gluten-free"
 celiac_focaccia.photo.attach(io: file, filename: 'nes.png')
 celiac_focaccia.save!
 
-puts "user created... meals for buyer..."
 
 #3 test seeds to be updated
 
