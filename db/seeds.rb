@@ -56,6 +56,8 @@ celiac_focaccia.photo.attach(io: file, filename: 'nes.png')
 celiac_focaccia.save!
 
 
+#3 test seeds to be updated
+
 file = URI.open('https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/dark-chocolate-1296x728-header.jpg?w=1155&h=1528')
 chocolate_for_vegan = Meal.new
 chocolate_for_vegan.user = marcel
@@ -63,5 +65,25 @@ chocolate_for_vegan.name = "Amazing vegan chocolate"
 chocolate_for_vegan.offer_price = 2
 chocolate_for_vegan.description = "These chocolate bars are made with vegan ingredients: cacao, coconut milk, maple syrup and salt."
 chocolate_for_vegan.restriction = "Vegan"
+chocolate_for_vegan.photo.attach(io: file, filename: 'nes.png')
+chocolate_for_vegan.save!
+
+file = URI.open('https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/dark-chocolate-1296x728-header.jpg?w=1155&h=1528')
+chocolate_for_vegan = Meal.new
+chocolate_for_vegan.user = marcel
+chocolate_for_vegan.name = "Amazing gluten-free celiac chocolate"
+chocolate_for_vegan.offer_price = 3
+chocolate_for_vegan.description = "These chocolate bars are made with vegan ingredients: cacao, coconut milk, maple syrup and salt."
+chocolate_for_vegan.restriction = "celiac"
+chocolate_for_vegan.photo.attach(io: file, filename: 'nes.png')
+chocolate_for_vegan.save!
+
+file = URI.open('https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/dark-chocolate-1296x728-header.jpg?w=1155&h=1528')
+chocolate_for_vegan = Meal.new
+chocolate_for_vegan.user = marcel
+chocolate_for_vegan.name = "Amazing diabetic chocolate"
+chocolate_for_vegan.offer_price = 4
+chocolate_for_vegan.description = "These chocolate bars are made with vegan ingredients: cacao, coconut milk, maple syrup and salt."
+chocolate_for_vegan.restriction = "diabetic"
 chocolate_for_vegan.photo.attach(io: file, filename: 'nes.png')
 chocolate_for_vegan.save!

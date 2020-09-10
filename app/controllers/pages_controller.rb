@@ -2,6 +2,13 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
   skip_after_action :verify_authorized
   def home
-    @meals = Meal.all
+    #raise
+    #search box controller for Where ILIKE
+    if params[:restrictions].present?
+      #raise
+      @meals = Meal.where("name ILIKE ?", "%#{params[:restrictions]}%")
+    else
+      @meals = Meal.all
+    end
   end
 end
