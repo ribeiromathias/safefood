@@ -16,6 +16,7 @@ puts "Instances destroyed... Creating new seller users"
 
 matheus = User.new
 matheus.name = 'Matheus'
+matheus.seller = true
 matheus.phone_number = "12345678"
 matheus.address = "Rio de janeiro"
 matheus.email = 'matheus@gmail.com'
@@ -24,6 +25,7 @@ matheus.save!
 
 
 marcel = User.new
+marcel.seller = true
 marcel.name = 'marcel'
 marcel.phone_number = "87654321"
 marcel.address = "Rio de janeiro"
