@@ -10,11 +10,11 @@ class MealPolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    create?
   end
 
   def create?
-    true
+    user.seller?
   end
 
   def edit?

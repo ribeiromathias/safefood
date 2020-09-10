@@ -4,12 +4,16 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <% if params[:seller].present?  %>
+      <%= f.input :seller, as: :hidden, input_html: {value: true} %>
+    <% end  %>
     <%= f.input :name,
                 required: true %>
     <%= f.input :phone_number,
                 required: true %>
     <%= f.input :address,
-                required: true %>
+                required: true,
+                label: params[:seller].present? ? "city where you deliver food" : "address" %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
