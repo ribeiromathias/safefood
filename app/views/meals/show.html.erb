@@ -3,9 +3,15 @@
 <%= @meal.offer_price %>
 <%= @meal.description %>
 <%= @meal.restriction %>
+<%= cl_image_tag(@meal.photo.key) %> 
 
-<%= simple_form_for [@meal, OrderItem.new] do |f| %>
-  <%= f.input :quantity %>
-  <%= f.submit "Add to cart" %>
+<% if current_user == @meal.user  %> 
+  <%= link_to "edit", edit_meal_path(@meal) %>
 <% end %>
 
+<% if current_user != @meal.user  %> 
+  <%= simple_form_for [@meal, OrderItem.new] do |f| %>
+    <%= f.input :quantity %>
+    <%= f.submit "Add to cart" %>
+  <% end %>
+<% end %>
