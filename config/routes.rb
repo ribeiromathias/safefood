@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   # create a order_item and and a list of orders and update the status
   # yet
   resources :orders, only: [:show, :index, :update]
+  resources :delivery_schedules, only: [:index, :new, :create, :destroy]
 end

@@ -1,0 +1,15 @@
+<div class="new_container text-center">
+
+<!-- Form generation -->
+  <div class="new_forms">
+    <%= simple_form_for(@delivery_schedule) do |f| %>
+      <div class="new_form">
+        <p><%= f.input :day, collection: ["monday", "tuesday", "wednesday", "thursday", "friday"] %></p>
+      </div>
+      <!-- <div class="insert_car">-->
+      <!-- </div> -->
+        <p><%= f.submit "next", class: "seller" %></p>
+    <% end %>
+  </div>
+
+</div>
