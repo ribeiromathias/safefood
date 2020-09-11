@@ -9,8 +9,11 @@
 require 'open-uri'
 
 puts "destroying all users and meals..."
-User.destroy_all
+OrderItem.destroy_all
 Meal.destroy_all
+Order.destroy_all
+DeliverySchedule.destroy_all
+User.destroy_all
 
 puts "Instances destroyed... Creating new seller users"
 
@@ -50,7 +53,7 @@ celiac_focaccia = Meal.new
 celiac_focaccia.user = matheus
 celiac_focaccia.name = "Gluten free focaccia"
 celiac_focaccia.offer_price = 3
-celiac_focaccia.description = "This gluten free rosemary focaccia is made entirely gluten free"
+celiac_focaccia.description = "This celiac rosemary focaccia is made entirely for gluten-free friends"
 celiac_focaccia.restriction = "Celiac"
 celiac_focaccia.photo.attach(io: file, filename: 'nes.png')
 celiac_focaccia.save!
@@ -71,6 +74,6 @@ vegan_lasagne.user = marcel
 vegan_lasagne.name = "Vegan lasagne"
 vegan_lasagne.offer_price = 3
 vegan_lasagne.description = "Homemade lasagne completely vegan."
-vegan_lasagne.restriction = "celiac"
+vegan_lasagne.restriction = "vegan"
 vegan_lasagne.photo.attach(io: file, filename: 'nes.png')
 vegan_lasagne.save!

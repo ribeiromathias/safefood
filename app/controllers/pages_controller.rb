@@ -9,5 +9,17 @@ class PagesController < ApplicationController
       @meals = Meal.all
     end
   end
+
+  def search
+    raise
+     if params[:name].present?
+      @meals = Meal.where("name ILIKE ?", "%#{params[:name]}%")
+    else
+      @meals = Meal.all # sorry food not available to be done
+    end
+  
+    redirect_to root_path(@meals)
+  end
+
 end
 
