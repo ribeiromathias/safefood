@@ -9,8 +9,8 @@
 require 'open-uri'
 
 puts "destroying all users and meals..."
-User.destroy_all
 Meal.destroy_all
+User.destroy_all
 
 puts "Instances destroyed... Creating new seller users"
 
