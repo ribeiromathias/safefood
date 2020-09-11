@@ -1,27 +1,30 @@
 class OrdersController < ApplicationController
-  
+
   def show
     @order = Order.find(params[:id])
     authorize @order
   end
 
   def index
-    @active_order = current_user.orders.find_by(status: "open")
+    @active_orders = current_user.orders.where(status: "open")
+    @pending_orders = current_user.orders.where(status: "pending")
+    @confirmed_orders = current_user.orders.where(status: "confirmed")
   end
 
   def update
     @order = Order.find(params[:id])
     authorize @order
-    if @order.update(order_params)
-      # order_path(@order) == order_path(@order.id)  ---> to show page
-      redirect_to order_path(@order), notice: 'Your order was successfully updated.' 
+    if ["pending", "cancelled"].include?(params[:status])
+      @order.update(status: params[:status])
+      redirect_to orders_path
     else
-      redirect_to order_path
+      redirect_to orders_path, alert: "Something went wrong"
     end
+
   end
 
   private
   def order_params
     params.require(:order).permit(:total_price, :status)
-  end 
+  end
 end
