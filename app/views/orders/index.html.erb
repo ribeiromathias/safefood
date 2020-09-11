@@ -1,12 +1,48 @@
-<% if @active_order.present? %>
-  <ul> 
+<% if @active_orders.any? %>
 
-    <% @active_order.order_items.each do |order_item| %>
-      <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price * order_item.quantity} " %> </li>
-    <% end %>
+  <h2>Open orders</h2>
+  <% @active_orders.each do |active_order| %>
+    <ul>
 
-  </ul>
+      <% active_order.order_items.each do |order_item| %>
+        <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price * order_item.quantity} " %> </li>
+      <% end %>
 
-<% else %>
-  <h2> No meals are present in your cart! Please add them </h2>
+    </ul>
+    <%= link_to "Confirm", order_path(active_order, status: "pending"), method: :patch, class: "btn btn-flat btn-primary" %>
+    <%= link_to "Cancel", order_path(active_order, status: "cancelled"), method: :patch, class: "btn btn-flat btn-danger" %>
+  <% end %>
+<% end %>
+
+
+<% if @pending_orders.any? %>
+  <h2>Pending order</h2>
+  <% @pending_orders.each do |pending_order| %>
+    <ul>
+
+      <% pending_order.order_items.each do |order_item| %>
+        <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price * order_item.quantity} " %> </li>
+      <% end %>
+
+    </ul>
+    <%= link_to "Cancel", order_path(pending_order, status: "cancelled"), method: :patch, class: "btn btn-flat btn-danger" %>
+  <% end %>
+<% end %>
+
+<% if @confirmed_orders.any? %>
+  <h2>Confimred order</h2>
+  <% @confirmed_orders.each do |confirmed_order| %>
+    <ul>
+
+      <% confirmed_order.order_items.each do |order_item| %>
+        <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price * order_item.quantity} " %> </li>
+      <% end %>
+
+    </ul>
+  <% end %>
+
+<% end %>
+
+<% if current_user.orders.empty? %>
+<h2> No meals are present in your cart! Please add them </h2>
 <% end %>
