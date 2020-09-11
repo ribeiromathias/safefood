@@ -51,39 +51,26 @@ celiac_focaccia.user = matheus
 celiac_focaccia.name = "Gluten free focaccia"
 celiac_focaccia.offer_price = 3
 celiac_focaccia.description = "This gluten free rosemary focaccia is made entirely gluten free"
-celiac_focaccia.restriction = "Gluten-free"
+celiac_focaccia.restriction = "Celiac"
 celiac_focaccia.photo.attach(io: file, filename: 'nes.png')
 celiac_focaccia.save!
 
-
-#3 test seeds to be updated
-
 file = URI.open('https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/dark-chocolate-1296x728-header.jpg?w=1155&h=1528')
-chocolate_for_vegan = Meal.new
-chocolate_for_vegan.user = marcel
-chocolate_for_vegan.name = "Amazing vegan chocolate"
-chocolate_for_vegan.offer_price = 2
-chocolate_for_vegan.description = "These chocolate bars are made with vegan ingredients: cacao, coconut milk, maple syrup and salt."
-chocolate_for_vegan.restriction = "Vegan"
-chocolate_for_vegan.photo.attach(io: file, filename: 'nes.png')
-chocolate_for_vegan.save!
+chocolate_for_diabetic = Meal.new
+chocolate_for_diabetic.user = marcel
+chocolate_for_diabetic.name = "Amazing diabetic chocolate"
+chocolate_for_diabetic.offer_price = 2
+chocolate_for_diabetic.description = "These chocolate bars are made with diabetic ingredients: cacao, coconut milk, maple syrup and salt."
+chocolate_for_diabetic.restriction = "diabetic"
+chocolate_for_diabetic.photo.attach(io: file, filename: 'nes.png')
+chocolate_for_diabetic.save!
 
-file = URI.open('https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/dark-chocolate-1296x728-header.jpg?w=1155&h=1528')
-chocolate_for_vegan = Meal.new
-chocolate_for_vegan.user = marcel
-chocolate_for_vegan.name = "Amazing gluten-free celiac chocolate"
-chocolate_for_vegan.offer_price = 3
-chocolate_for_vegan.description = "These chocolate bars are made with vegan ingredients: cacao, coconut milk, maple syrup and salt."
-chocolate_for_vegan.restriction = "celiac"
-chocolate_for_vegan.photo.attach(io: file, filename: 'nes.png')
-chocolate_for_vegan.save!
-
-file = URI.open('https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/dark-chocolate-1296x728-header.jpg?w=1155&h=1528')
-chocolate_for_vegan = Meal.new
-chocolate_for_vegan.user = marcel
-chocolate_for_vegan.name = "Amazing diabetic chocolate"
-chocolate_for_vegan.offer_price = 4
-chocolate_for_vegan.description = "These chocolate bars are made with vegan ingredients: cacao, coconut milk, maple syrup and salt."
-chocolate_for_vegan.restriction = "diabetic"
-chocolate_for_vegan.photo.attach(io: file, filename: 'nes.png')
-chocolate_for_vegan.save!
+file = URI.open('https://www.recipetineats.com/wp-content/uploads/2017/05/Lasagne-recipe-3-main-square.jpg?w=500&h=375&crop=1')
+vegan_lasagne = Meal.new
+vegan_lasagne.user = marcel
+vegan_lasagne.name = "Vegan lasagne"
+vegan_lasagne.offer_price = 3
+vegan_lasagne.description = "Homemade lasagne completely vegan."
+vegan_lasagne.restriction = "celiac"
+vegan_lasagne.photo.attach(io: file, filename: 'nes.png')
+vegan_lasagne.save!
