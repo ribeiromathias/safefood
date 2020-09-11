@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }  
   root to: 'pages#home'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # 1 - I want a page with the list of all the products,
