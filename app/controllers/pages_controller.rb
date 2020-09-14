@@ -15,8 +15,8 @@ class PagesController < ApplicationController
   def search
      if params[:query].present?
       sql_query = " \
-      meals.restriction ILIKE :query \
-      OR users.name ILIKE :query \
+      meals.restriction @@ :query \
+      OR users.name @@ :query \
       "
       @meals = Meal.joins(:user).where(sql_query, query: "%#{params[:query]}%")
      else

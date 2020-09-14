@@ -10,9 +10,13 @@ Rails.application.routes.draw do
   # 1 - I want a page with the list of all the products,
   # with buttons so that the user can add to cart
   # meals/meal_id/order_item
+
   resources :meals do
+    resources :reviews, only: [:new, :create ]
     resources :order_items, only: [:create]
   end
+
+  resources :reviews, only: [:destroy]
 
   resources :order_items, only: [:destroy]
   # 2 - When the user clicks on add to cart, I want to
