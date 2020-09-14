@@ -22,8 +22,8 @@ class PagesController < ApplicationController
       meals.restriction @@ :query \
       OR users.name @@ :query \
       "
-      @meals = Meal.joins(:user).where(sql_query && , query: "%#{params[:query]}%")
-      elsif params[:restriction].present? && XXXXXXXXXXX !params[:query].present?
+      @meals = Meal.joins(:user).where(sql_query && XXXXXXXXXXX, query: "%#{params[:query]}%")
+      elsif params[:restriction].present? && !params[:query].present?
       @meals = Meal.where("restriction ILIKE ?", "%#{params[:restriction]}%")
       elsif !params[:restriction].present? && params[:query].present?
       @meals = Meal.where("XXXXXXXXXXX ILIKE ?", "%#{params[:query]}%")
