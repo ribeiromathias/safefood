@@ -12,6 +12,12 @@ Rails.application.routes.draw do
     resources :order_items, only: [:create]
   end
 
+  resources :meals do
+    resources :reviews, only: [:index, :new, :create ]
+  end
+
+  resources :reviews, only: [:destroy]
+
   resources :order_items, only: [:destroy]
   # 2 - When the user clicks on add to cart, I want to
   # create a order_item and and a list of orders and update the status

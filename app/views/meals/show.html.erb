@@ -8,14 +8,39 @@
   <p> <%= @meal.restriction %> </p>
 
 
-  <% if current_user == @meal.user  %> 
+  <% if current_user == @meal.user  %>
     <%= link_to "edit", edit_meal_path(@meal) %>
   <% end %>
 
-  <% if current_user != @meal.user  %> 
+  <% if current_user != @meal.user  %>
     <%= simple_form_for [@meal, OrderItem.new] do |f| %>
       <%= f.input :quantity %>
       <div class="green-button"><%= f.submit "Add to cart" %> </div>
     <% end %>
   <% end %>
+
+<!-- Reviews "paths check"-->
+  <div>
+    <%= link_to 'Edit', edit_meal_path(@restaurant) %> |
+    <%= link_to 'Back', meals_path %> |
+    <%= link_to 'Leave a review', new_meal_review_path(@meal) %>
+  </div>
 </div>
+
+<!-- Reviews-enrich show-->
+
+<ul class="list-group">
+  <% @meals.reviews.each do |review| %>
+    <li class="list-group-item"><%= meal.content %></li>
+  <% end %>
+</ul>
+
+<!-- Review destroy-->
+
+<li class="list-group-item">
+      <%= review.content %>
+      <%= link_to "Remove",
+                  review_path(review),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    </li>
