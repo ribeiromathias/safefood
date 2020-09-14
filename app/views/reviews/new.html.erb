@@ -1,0 +1,7 @@
+<!-- simple form for review -->
+<%= simple_form_for [ @meal, @review ] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Submit review", class: "btn btn-flat" %>
+<% end %>
+
+

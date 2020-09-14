@@ -1,0 +1,31 @@
+.card-show {
+  background-color: white;
+  border-radius: 30px;
+  margin-top: -15px;
+}
+
+.border-price {
+  border-bottom: 1px solid rgb(192, 191, 191);
+}
+
+.pic-show {
+  width: 360px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+}
+
+.pic-show img {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.green-button input {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
