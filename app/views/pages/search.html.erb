@@ -1,7 +1,27 @@
 <div class="container" style="margin-bottom: 50px">
-  <%unless user_signed_in?%>
+  <%unless user_signed_in?%> 
   <h1 class="text-center call-to-action">Browse through our wonderful selection of foods!</h1>
   <%end%>
+  <h1> <%= params %> </h1>
+
+  <div class="form-inline">
+    <%= form_tag search_path, method: :get do %>
+
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a name"
+      %>
+
+      <%= hidden_field_tag :restriction, params[:restriction]
+      
+      %>
+
+      <%= submit_tag "Search", class: "btn btn-secondary" %>
+
+    <% end %>
+  </div>
+
   <div class="cards">
     <% @meals.each do |meal| %>
       <%= link_to meal do %>
