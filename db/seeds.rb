@@ -80,14 +80,14 @@ celiac_fetuccine.photo.attach(io: file, filename: 'nes.png')
 celiac_fetuccine.save!
 
 file = URI.open('https://storcpdkenticomedia.blob.core.windows.net/media/recipemanagementsystem/media/recipe-media-files/recipes/retail/x17/17607-caramel-apple-pie-760x580.jpg?ext=.jpg')
-celiac_focaccia = Meal.new
-celiac_focaccia.user = sem_gluten
-celiac_focaccia.name = "Crispy glute-free Applepie"
-celiac_focaccia.offer_price = 3
-celiac_focaccia.description = "American Apple pie for celiacs, using only gluten-free flour"
-celiac_focaccia.restriction = "Celiac"
-celiac_focaccia.photo.attach(io: file, filename: 'nes.png')
-celiac_focaccia.save!
+celiac_apple_pie = Meal.new
+celiac_apple_pie.user = botanic_life_nutrition
+celiac_apple_pie.name = "Crispy glute-free Applepie"
+celiac_apple_pie.offer_price = 3
+celiac_apple_pie.description = "American Apple pie for celiacs, using only gluten-free flour"
+celiac_apple_pie.restriction = "Celiac"
+celiac_apple_pie.photo.attach(io: file, filename: 'nes.png')
+celiac_apple_pie.save!
 
 puts "diabetic foods' seller"
 
@@ -113,7 +113,7 @@ cake_for_diabetic.save!
 
 file = URI.open('https://diabetesstrong.com/wp-content/uploads/2018/05/keto-cobb-salad-1.jpg')
 keto_cobb_salad = Meal.new
-keto_cobb_salad.user = for_diabetic
+keto_cobb_salad.user = botanic_life_nutrition
 keto_cobb_salad.name = "Healty diabetic friendly salad"
 keto_cobb_salad.offer_price = 2
 keto_cobb_salad.description = "High fat, low carb Keto Cobb Salad - Diabetic friendly"

@@ -10,15 +10,33 @@ class PagesController < ApplicationController
     end
   end
 
+            
+
   def search
-     if params[:name].present?
-      @meals = Meal.where("name ILIKE ?", "%#{params[:name]}%")
-    elsif current_user.present?
+     if params[:query].present?
+      sql_query = " \
+      meals.restriction ILIKE :query \
+      OR users.name ILIKE :query \
+      "
+      @meals = Meal.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+     else
       @meals = Meal.all# sorry food not available to be done
     end
-  
-    redirect_to root_path(@meals)
   end
-
 end
+
+# def index
+    #if params[:query].present?
+     # sql_query = "name ILIKE :query OR restriction ILIKE :query"
+      #@meals = Meal.where(sql_query, query: "%#{params[:query]}%")
+    #else
+     # @meals = meal.all
+    #end
+  #end
+
+# ANDRE INPUTS:
+# filter by name on controller
+# hidden tag in view, to store restriction
+# controller action works with both of the filter
+
 

@@ -24,30 +24,37 @@
       </div>
   </form>
 
+                                  <div>
+                                    <%= form_tag root_path, method: :get do %>
+                                      <%= text_field_tag :query,
+                                        params[:query],
+                                        class: "form-control",
+                                        placeholder: "Find a name"
+                                      %>
+                                      <%= submit_tag "Search", class: "btn btn-secondary" %>
+                                    <% end %>
+                                  </div>
+<!-- the list of movies -->
   <div class="text-center" >
   <div class="banner" style="">
     <div class="banner-content container">
       <form action="/" method="get" class="form-inline justify-content-center mb-5 mt-0">
         <!-- <i class="fas fa-search active" aria-hidden="true"></i> -->
-        <input id="autocomplete" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" name="search" aria-label="Search">
+        <input id="autocomplete" class="form-control form-control-sm ml-3 w-75" 
+           type="text" placeholder="Search" name="search" aria-label="Search">
         <input class="search" type="submit" value="Check the food you wish">
       </form>
     </div>
   </div>
 </div>
 
-<div>
-<%= form_tag search_path, method: :get do %>
-  <%= text_field_tag :name,
-    params[:name],
-    class: "form-control",
-    placeholder: "Find a meal"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
 
-</div>
-<!-- A grid for the cards-meals -->
+
+
+<!-- A grid for the cards-meals # ANDRE INPUTS:
+# filter by name on controller
+# hidden tag in view, to store restriction
+# controller action works with both of the filter-->
 
   <div class="cards-meals">
     <% @meals.each do |meal|%>
