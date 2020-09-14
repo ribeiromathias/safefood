@@ -1,0 +1,42 @@
+ <div class="form-inline">
+  <%= form_tag search_path, method: :get do %>
+
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a name"
+    %>
+    <%= submit_tag "Search", class: "btn btn-secondary" %>
+  
+  <% end %>
+</div>
+
+<div class="container" style="margin-bottom: 50px">
+  <%unless user_signed_in?%>
+  <h1 class="text-center call-to-action">Browse through our wonderful selection of foods!</h1>
+  <%end%>
+  <div class="cards">
+    <% @meals.each do |meal| %>
+      <%= link_to meal do %>
+        <div class="card-meal">
+         <%= cl_image_tag(meal.photo.key) %>   <!-- check the comment down and see where u can replace-->
+          <div class="card-meal-infos">
+            <div>
+              <h2 class="card-meal-pricing">$ <%= meal.offer_price %></h2>
+              <h2><%= meal.name %></h2>
+              <h2><%= meal.description %></h2>
+              <h2><%= meal.restriction %></h2>
+              <!-- #cloudinary photo can be put here alternatively check it out --> 
+            </div>
+            <div class="card-meal-user">
+              <p><em><%= meal.user.name %></em></p>
+              <p><em><%= meal.user.phone_number %></em></p>
+              <p><em><%= meal.user.email %></em></p>
+              <p><em><%= meal.user.address %></em></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
