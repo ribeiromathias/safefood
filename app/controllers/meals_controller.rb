@@ -26,11 +26,12 @@ class MealsController < ApplicationController
     @meal = Meal.find(params[:id])
     authorize @meal
   end
-  
+
   # update
   def edit
     @meal = Meal.find(params[:id])
     authorize @meal
+    # is OK to get error in development-pundit
   end
 
   def update
@@ -43,7 +44,7 @@ class MealsController < ApplicationController
     end
   end
 
-  def destroy 
+  def destroy
     @meal = Meal.find(params[:id])
     authorize @meal
     @meal.destroy
@@ -53,6 +54,6 @@ class MealsController < ApplicationController
   private
   def meal_params
     params.require(:meal).permit(:name, :offer_price, :description, :restriction, :photo)
-  end 
+  end
 
 end
