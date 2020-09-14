@@ -4,7 +4,7 @@
   <div class="new_forms">
     <%= simple_form_for(@delivery_schedule) do |f| %>
       <div class="new_form">
-        <p><%= f.input :day, collection: ["monday", "tuesday", "wednesday", "thursday", "friday"] %></p>
+        <p><%= f.input :day, as: :radio_buttons, collection: ["monday", "tuesday", "wednesday", "thursday", "friday"] %></p>
       </div>
       <!-- <div class="insert_car">-->
       <!-- </div> -->
