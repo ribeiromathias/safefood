@@ -1,5 +1,5 @@
 class MealsController < ApplicationController
-  # create
+  skip_before_action :authenticate_user!, only: [:show, :index]
   def new
     @meal = Meal.new
     authorize @meal
