@@ -53,10 +53,7 @@
     <% @meals.each do |meal|%>
       <%= link_to meal_path(meal) do %>
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path meal.photo.key %>')">
-          <%= meal.name %>
-          <%= meal.offer_price %>
-          <%= meal.description %>
-          
+          <h6> <b><%="#{meal.user.name}: "%></b> <%="#{meal.name} at #{meal.offer_price}$"%> </h6>
         </div>
       <% end %>
     <% end %>
