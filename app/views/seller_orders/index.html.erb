@@ -1,0 +1,27 @@
+<% if @orders.any? %>
+
+
+  <% @orders.each do |order| %>
+   <h2><%= order.status %></h2>
+    <ul>
+
+      <% order.order_items.each do |order_item| %>
+        <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price * order_item.quantity} " %> </li>
+      <% end %>
+
+    </ul>
+    <p> <%= "The address is: #{order.user.address}, the client is #{order.user.name}"%> </p>
+    <% if order.status == "pending" %>
+
+      <%= link_to "Confirm", seller_order_path(order, status: "approved"), method: :patch, class: "btn btn-flat btn-primary" %>
+      <%= link_to "Cancel", seller_order_path(order, status: "cancelled"), method: :patch, class: "btn btn-flat btn-danger" %>
+    <% end %>
+
+  <% end %>
+<% end %>
+
+
+
+<% if @orders.empty? %>
+<h2> No orders were made for you yet! </h2>
+<% end %>

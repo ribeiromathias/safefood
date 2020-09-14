@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations'
-  }  
+  }
   root to: 'pages#home'
   get '/search', to: 'pages#search'
 
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # 1 - I want a page with the list of all the products,
   # with buttons so that the user can add to cart
   # meals/meal_id/order_item
-  resources :meals do 
+  resources :meals do
     resources :order_items, only: [:create]
   end
 
@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   # create a order_item and and a list of orders and update the status
   # yet
   resources :orders, only: [:show, :index, :update]
+  resources :seller_orders, only: [:show, :index, :update]
   resources :delivery_schedules, only: [:index, :new, :create, :destroy]
 end
