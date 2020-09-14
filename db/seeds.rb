@@ -69,7 +69,7 @@ celiac_focaccia.restriction = "Celiac"
 celiac_focaccia.photo.attach(io: file, filename: 'nes.png')
 celiac_focaccia.save!
 
-file = URI.open('https://www.chiceats.com/recipe/homemade/how-make-fresh-pasta')
+file = URI.open('https://www.thelittlekitchen.net/wp-content/uploads/2013/02/how-to-make-homemade-pasta-the-little-kitchen-4494.jpg')
 celiac_fetuccine = Meal.new
 celiac_fetuccine.user = sem_gluten
 celiac_fetuccine.name = "Gluten free fetuccine"
