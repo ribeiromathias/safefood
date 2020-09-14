@@ -1,21 +1,29 @@
-<div class="pic-show">
-  <%= cl_image_tag(@meal.photo.key) %>
-</div>
-<div class="card-body card-show">
-  <h2> <%= @meal.name %> </h2>
-  <p class="border-price"> R$ <%= @meal.offer_price %>,00 </p>
-  <p> <%= @meal.description %> </p>
-  <p> <%= @meal.restriction %> </p>
 
 
-  <% if current_user == @meal.user  %> 
-    <%= link_to "edit", edit_meal_path(@meal) %>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col col-sm-1 p-0">
+      <div class="pic-show">
+        <%= cl_image_tag(@meal.photo.key) %>
+      </div>
+      <div class="card-body card-show">
+        <h2> <%= @meal.name %> </h2>
+        <p class="border-price"> R$ <%= @meal.offer_price %>,00 </p>
+        <p> <%= @meal.description %> </p>
+        <p> <%= @meal.restriction %> </p>
 
-  <% if current_user != @meal.user  %> 
-    <%= simple_form_for [@meal, OrderItem.new] do |f| %>
-      <%= f.input :quantity %>
-      <div class="green-button"><%= f.submit "Add to cart" %> </div>
-    <% end %>
-  <% end %>
+
+        <% if current_user == @meal.user %> 
+          <%= link_to "edit", edit_meal_path(@meal) %>
+        <% end %>
+
+        <% if current_user != @meal.user  %> 
+          <%= simple_form_for [@meal, OrderItem.new] do |f| %>
+            <%= f.input :quantity %>
+            <div class="green-button"><%= f.submit "Order" %> </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

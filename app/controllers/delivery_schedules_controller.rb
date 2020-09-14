@@ -10,6 +10,7 @@ class DeliverySchedulesController < ApplicationController
   end
   
   def create
+    # raise
     @delivery_schedule = DeliverySchedule.new(delivery_schedule_params)
     @delivery_schedule.user = current_user
     authorize @delivery_schedule

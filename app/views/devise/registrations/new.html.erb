@@ -8,7 +8,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <% if params[:seller].present?  %>
+    <% if params["seller"].present?  %>
       <%= f.input :seller, as: :hidden, input_html: {value: true} %>
     <% end  %>
     <%= f.input :name,
