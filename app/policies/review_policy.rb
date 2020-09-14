@@ -1,18 +1,15 @@
-class OrderItemPolicy < ApplicationPolicy
+class ReviewPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
-
   def create?
-
     true
   end
-
   def destroy?
-
-    record.order.user == user
+     #change!
+    true
   end
-
 end
+
