@@ -21,7 +21,7 @@
 
 <!-- Reviews "paths check"-->
   <div>
-    <%= link_to 'Edit', edit_meal_path(@restaurant) %> |
+    <%= link_to 'Edit', edit_meal_path(@meal) %> |
     <%= link_to 'Back', meals_path %> |
     <%= link_to 'Leave a review', new_meal_review_path(@meal) %>
   </div>
@@ -30,8 +30,8 @@
 <!-- Reviews-enrich show-->
 
 <ul class="list-group">
-  <% @meals.reviews.each do |review| %>
-    <li class="list-group-item"><%= meal.content %></li>
+  <% @meal.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
   <% end %>
 </ul>
 
