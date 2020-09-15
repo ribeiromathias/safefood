@@ -17,6 +17,10 @@ class MealPolicy < ApplicationPolicy
     user.seller?
   end
 
+  def owned?
+    update?
+  end
+
   def edit?
     update?
   end
