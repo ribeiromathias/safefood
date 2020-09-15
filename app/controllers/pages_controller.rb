@@ -16,18 +16,19 @@ class PagesController < ApplicationController
   # only restriction --> like 26
   
   def search
-    raise 
-     if params[:query].present? && params[:restriction].present?
+   
+    if params[:query].present? && params[:restriction].present?
       sql_query = " \
-      meals.restriction @@ :query \
-      OR users.name @@ :query \
+      meals.restriction @@ :restriction \
+      AND users.name @@ :query \
       "
-      @meals = Meal.joins(:user).where(sql_query && XXXXXXXXXXX, query: "%#{params[:query]}%")
-      elsif params[:restriction].present? && !params[:query].present?
+      @meals = Meal.joins(:user).where(sql_query, query: "%#{params[:query]}%",
+      restriction: "%#{params[:restriction]}")
+    elsif params[:restriction].present? && !params[:query].present?
       @meals = Meal.where("restriction ILIKE ?", "%#{params[:restriction]}%")
-      elsif !params[:restriction].present? && params[:query].present?
-      @meals = Meal.where("XXXXXXXXXXX ILIKE ?", "%#{params[:query]}%")
-     else
+    elsif !params[:restriction].present? && params[:query].present?
+      @meals = Meal.joins(:user).where("users.name ILIKE ?", "%#{params[:query]}%")
+    else
       @meals = Meal.all# sorry food not available to be done
     end
   end
