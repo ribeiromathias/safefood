@@ -5,7 +5,7 @@
     <ul>
 
       <% active_order.order_items.each do |order_item| %>
-        <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price * order_item.quantity} " %> </li>
+        <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price} " %> </li>
       <% end %>
 
     </ul>
@@ -21,7 +21,7 @@
     <ul>
 
       <% pending_order.order_items.each do |order_item| %>
-        <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price * order_item.quantity} " %> </li>
+        <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price.to_i * order_item.quantity.to_i} " %> </li>
       <% end %>
 
     </ul>
