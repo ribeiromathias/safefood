@@ -45,4 +45,13 @@
       <% end %>
     <% end %>
   </div>
+
+  <% @filtered_meals.each do |key, value| %>
+
+  <div class="search-button btn" id="<%= key %>">
+    <h3> <%= key %> </h3> 
+  </div>
+
+  <% end %>
+  <h1>testing</h1>
 </div>
