@@ -21,9 +21,14 @@
     <% end %>
   </div>
 
-  <div class="cards">
+    <% @restaurants&.each do |restaurant| %>
+      <div class="card btn search-button" data-restaurant-id="<%= restaurant.id %>">
+        <h3> <%= restaurant.name %> </h3> 
+      </div>
+    <% end %>
+  <div class="cards" id="list" data-filtered-meals="<%= @filtered_meals %>">
     <% @meals.each do |meal| %>
-      <%= link_to meal do %>
+      <%= link_to meal, "data-restaurant-id": meal.user.id  do %>
         <div class="card-meal">
          <%= cl_image_tag(meal.photo.key) %>   <!-- check the comment down and see where u can replace-->
           <div class="card-meal-infos">
@@ -45,13 +50,6 @@
       <% end %>
     <% end %>
   </div>
+  
 
-  <% @filtered_meals.each do |key, value| %>
-
-  <div class="search-button btn" id="<%= key %>">
-    <h3> <%= key %> </h3> 
-  </div>
-
-  <% end %>
-  <h1>testing</h1>
 </div>

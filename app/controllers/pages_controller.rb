@@ -26,7 +26,8 @@ class PagesController < ApplicationController
       restriction: "%#{params[:restriction]}")
     elsif params[:restriction].present? && !params[:query].present?
       @meals = Meal.where("restriction ILIKE ?", "%#{params[:restriction]}%")
-      @filtered_meals = @meals.group_by {|meal| meal.user.name}
+      @restaurants = User.where(meals: @meals)
+     ## @js_meals = @filtered_meals.to_s
     elsif !params[:restriction].present? && params[:query].present?
       @meals = Meal.joins(:user).where("users.name ILIKE ?", "%#{params[:query]}%")
     else
