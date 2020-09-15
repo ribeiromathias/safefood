@@ -1,25 +1,47 @@
 // Specific CSS for your home-page
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
 .card-categories {
   display: flex;
   flex-direction: column;
 
   button {
     padding: 50px;
-    margin: 20px;
+    margin: 8px 15px;
+    border: 0;
+    background-size: cover;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    background-color: #01DF85;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    margin: 8px 22px;
+    transition: 0.5s;
   }
 
   button a {
     color:white;
-    border: 1px solid black;
     border-radius: 25px;
     padding: 8px;
     font-weight: bold;
+    background-color: #01DF85;
+    text-decoration: none !important;
   }
 
-  .banner-img {
-    background-color: transparent; /* like this */
-    background-image: url(/app/assets/images/food-background.jpg) no-repeat;
-    background-size: cover;
+  .veg-pic {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('img-vegan.jpg');
+  }
+
+  .cel-pic {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('img-celiac.jpg');
+  }
+
+  .dia-pic {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('img-diabetic.png');
   }
   
 }

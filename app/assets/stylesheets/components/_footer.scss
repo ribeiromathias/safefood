@@ -1,7 +1,43 @@
 .footer-container {
   width: 100%;
-  margin: 40px auto;
-  display: flex;
-  flex-wrap: wrap;
+  margin-top: 40px;
   color: grey;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .footer-links i {
+    color: gray;
+    padding: 10px;
+  }
+
+  .footer-links .fa-instagram:hover {
+    border-radius: 3px;
+    padding: 10px;
+    color: white;
+    background-color: #e1306c;
+  }
+
+  .footer-links .fa-facebook-f:hover {
+    border-radius: 3px;
+    padding: 10px;
+    color: white;
+    background-color: #3b5998;
+  }
+
+  .footer-links .fa-twitter:hover {
+    border-radius: 3px;
+    padding: 10px;
+    color: white;
+    background-color: #1da1f2;
+  }
+
+  
 }
