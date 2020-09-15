@@ -1,11 +1,16 @@
-<div class="layout-background">
+<%# <div class="layout-background"> %>
 
-<div class="d-flex align-items-end">
+  <div class="d-flex align-items-end">
 
-</div>
+  </div>
 
 
-<div class="mb-2">
+<div class="container">
+
+  <div class="text-center mt-3">
+    <p>Hi!</p>
+    <p>Select you dietary restriction</p>
+  </div>
 
 
   <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
@@ -27,14 +32,15 @@
       </div>
 -->
 
-      <button name="vegan" type="submit" class="btn btn-flat btn-pic">
-        <%= link_to "Vegan", search_path(restriction: "vegan") %>
+
+      <button name="vegan" type="submit" class="btn veg-pic">
+        <%= link_to "Vegan >", search_path(restriction: "vegan") %>
       </button>
-      <button name="celiac" type="submit" class="btn btn-flat">
-        <%= link_to "Celiac", search_path(restriction: "celiac") %>
+      <button name="celiac" type="submit" class="btn cel-pic">
+        <%= link_to "Celiac >", search_path(restriction: "celiac") %>
       </button>
-      <button name="diabetic" type="submit" class="btn btn-flat">
-        <%= link_to "Diabetic", search_path(restriction: "diabetic") %>
+      <button name="diabetic" type="submit" class="btn dia-pic">
+        <%= link_to "Diabetic >", search_path(restriction: "diabetic") %>
       </button>
 
     </div>
@@ -42,7 +48,7 @@
   </form>
 
 
-</div>
+<%# </div> %>
 <!-- the list of movies -->
   
 
@@ -65,7 +71,5 @@
     <%# end %>
 
   </div>
-
-</div>
 -->
-
+</div>
