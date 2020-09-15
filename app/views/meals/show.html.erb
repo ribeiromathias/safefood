@@ -11,11 +11,11 @@
         <p> <%= @meal.restriction %> </p>
 
 
-        <% if current_user == @meal.user %> 
+        <% if current_user == @meal.user %>
           <%= link_to "edit", edit_meal_path(@meal) %>
         <% end %>
 
-        <% if current_user != @meal.user  %> 
+        <% if current_user != @meal.user  %>
           <%= simple_form_for [@meal, OrderItem.new] do |f| %>
             <%= f.input :quantity %>
             <div class="green-button"><%= f.submit "Order" %> </div>
@@ -40,10 +40,6 @@
     <li class="list-group-item"><%= review.content %>
 
 
-      <%= link_to "Remove",
-                  review_path(review),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
     </li>
   <% end %>
 </ul>

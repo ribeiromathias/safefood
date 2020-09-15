@@ -8,8 +8,9 @@ class ReviewPolicy < ApplicationPolicy
     true
   end
   def destroy?
-     #change!
-    true
+     #record.user == user
+     #no one can delete a review:
+    false
   end
 end
 

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: [ :home, :search ]
   skip_after_action :verify_authorized
   def home
     #search box controller for Where ILIKE
@@ -14,9 +14,9 @@ class PagesController < ApplicationController
   # if i have query and restriction --> query sql --> query and restriction = ILIKE params[:restriction]
   # query without rescrition
   # only restriction --> like 26
-  
+
   def search
-   
+
     if params[:query].present? && params[:restriction].present?
       sql_query = " \
       meals.restriction @@ :restriction \
