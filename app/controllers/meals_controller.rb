@@ -17,6 +17,12 @@ class MealsController < ApplicationController
     end
   end
 
+ # owner meals
+  def owned
+    @meals = policy_scope(Meal).where(user_id: current_user.id)
+
+  end
+
   # read
   def index
     @meals = Meal.all
