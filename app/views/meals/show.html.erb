@@ -16,7 +16,7 @@
 
         <% if current_user != @meal.user  %>
           <%= simple_form_for [@meal, OrderItem.new] do |f| %>
-            <%= f.input :quantity %>
+            <%= f.input :quantity, :input_html => { :value => 1 } %>
             <div class="green-button">
               <%= f.submit "Order" %>
             </div>
