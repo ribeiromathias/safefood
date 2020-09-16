@@ -11,7 +11,7 @@
         <p> <%= @meal.restriction %> </p>
 
         <% if current_user == @meal.user %>
-          <%= link_to "edit", edit_meal_path(@meal) %>
+          <% link_to "edit", edit_meal_path(@meal) %>
         <% end %>
 
         <% if current_user != @meal.user  %>
