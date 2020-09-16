@@ -1,0 +1,27 @@
+.orders-details {
+  background-color: white;
+  margin-top: 20px;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  ul {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+
+  h5 {
+    padding-left: 20px;
+    color: gray;
+  }
+
+  h6 {
+    padding-left: 20px;
+  }
+
+  .total-color {
+    color: #01DF85;
+    font-weight: bold;
+  }
+}
+
