@@ -25,33 +25,10 @@
 
       <% @restaurants&.each do |restaurant| %>
         <div class="card btn search-button" data-restaurant-id="<%= restaurant.id %>">
-          <h3> <%= link_to restaurant.name, restaurant_path(restaurant) %> </h3> 
+          <h3> <%= link_to restaurant.name, restaurant_path(restaurant, restriction: params[:restriction]) %> </h3> 
         </div>
       <% end %>
-      <div class="cards">
-        <% @meals.each do |meal| %>
-          <%= link_to meal do %>
-            <div class="card-meal d-flex">
-              <%= cl_image_tag(meal.photo.key) %>   <!-- check the comment down and see where u can replace-->
-              <div class="card-meal-infos">
-                <div class="infos">
-                  <h4><%= meal.name %></h4>
-                  <p class="card-meal-pricing">$ <%= meal.offer_price %>,00</p>
-                  <!-- <p><%= meal.description %></p>
-                  <p><%= meal.restriction %></p>-->
-                  <!-- #cloudinary photo can be put here alternatively check it out --> 
-                </div>
-                <!-- <div class="card-meal-user">
-                  <p><em><%= meal.user.name %></em></p>
-                  <p><em><%= meal.user.phone_number %></em></p>
-                  <p><em><%= meal.user.email %></em></p>
-                  <p><em><%= meal.user.address %></em></p>
-                </div> -->
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
+
     </div>
   </div>
   

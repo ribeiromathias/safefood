@@ -66,7 +66,7 @@ celiac_focaccia.user = sem_gluten
 celiac_focaccia.name = "Gluten free focaccia"
 celiac_focaccia.offer_price = 3
 celiac_focaccia.description = "This rosemary focaccia is made entirely for celiac friends"
-celiac_focaccia.restriction = "Celiac"
+celiac_focaccia.restriction = "celiac"
 celiac_focaccia.photo.attach(io: file, filename: 'nes.png')
 celiac_focaccia.save!
 
@@ -76,7 +76,7 @@ celiac_fetuccine.user = sem_gluten
 celiac_fetuccine.name = "Gluten free fetuccine"
 celiac_fetuccine.offer_price = 3
 celiac_fetuccine.description = "This celiac friendly fetuccine are completely handmade"
-celiac_fetuccine.restriction = "Celiac"
+celiac_fetuccine.restriction = "celiac"
 celiac_fetuccine.photo.attach(io: file, filename: 'nes.png')
 celiac_fetuccine.save!
 
@@ -86,7 +86,7 @@ celiac_apple_pie.user = botanic_life_nutrition
 celiac_apple_pie.name = "Crispy glute-free Applepie"
 celiac_apple_pie.offer_price = 3
 celiac_apple_pie.description = "American Apple pie for celiacs, using only gluten-free flour"
-celiac_apple_pie.restriction = "Celiac"
+celiac_apple_pie.restriction = "celiac"
 celiac_apple_pie.photo.attach(io: file, filename: 'nes.png')
 celiac_apple_pie.save!
 
