@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'restaurants/show'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
