@@ -25,7 +25,7 @@
         <!-- Reviews "paths check"-->
         <div>
           <%= link_to 'Edit', edit_meal_path(@meal) %> |
-          <%= link_to 'Back', meals_path %> |
+          <%= link_to 'Back', restaurant_path(id: @meal.user.id, restriction: @meal.restriction) %> 
           <%= link_to 'Leave a review', new_meal_review_path(@meal) %>
         </div>
       </div>

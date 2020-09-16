@@ -1,11 +1,11 @@
-<div class="restaurant-banner text-center p-3 bg-light">
+<div class="restaurant-banner text-center p-3 bg-light mb-3 m-3">
   <img class="rounded-circle" mb-3" src="http://placehold.it/100x100" alt="test">
   <!-- <%#= cl_image_tag(@restaurant.photo.key) %> -->
-  <h1 class="h3"><%= @restaurant.name %></h1>
+  <h1 class="h3 pt-3 pb-0"><%= @restaurant.name %></h1>
 </div>
 
 
-<div class="cards">
+<div class="cards m-3">
   <% @meals.each do |meal| %>
     <%= link_to meal, class: "card-product" do %>
       <div class="card-product-image">
