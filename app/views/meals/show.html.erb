@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row">
-    <div class="col col-sm-1 p-0">
+  <div class="row justify-content-center">
+    <div class="col col-lg-6 p-0">
       <div class="pic-show">
         <%= cl_image_tag(@meal.photo.key) %>
       </div>
@@ -10,26 +10,26 @@
         <p> <%= @meal.description %> </p>
         <p> <%= @meal.restriction %> </p>
 
-
-        <% if current_user == @meal.user %> 
+        <% if current_user == @meal.user %>
           <%= link_to "edit", edit_meal_path(@meal) %>
         <% end %>
 
-        <% if current_user != @meal.user  %> 
+        <% if current_user != @meal.user  %>
           <%= simple_form_for [@meal, OrderItem.new] do |f| %>
             <%= f.input :quantity %>
-            <div class="green-button"><%= f.submit "Order" %> </div>
+            <div class="green-button">
+              <%= f.submit "Order" %>
+            </div>
           <% end %>
         <% end %>
+        <!-- Reviews "paths check"-->
+        <div>
+          <%= link_to 'Edit', edit_meal_path(@meal) %> |
+          <%= link_to 'Back', meals_path %> |
+          <%= link_to 'Leave a review', new_meal_review_path(@meal) %>
+        </div>
       </div>
     </div>
-
-<!-- Reviews "paths check"-->
-  <div>
-    <%= link_to 'Edit', edit_meal_path(@meal) %> |
-    <%= link_to 'Back', meals_path %> |
-    <%= link_to 'Leave a review', new_meal_review_path(@meal) %>
-
   </div>
 </div>
 
@@ -37,13 +37,8 @@
 
 <ul class="list-group">
   <% @meal.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.content %>
-
-
-      <%= link_to "Remove",
-                  review_path(review),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
+    <li class="list-group-item">
+      <%= review.content %>
     </li>
   <% end %>
 </ul>

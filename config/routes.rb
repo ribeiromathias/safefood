@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/search', to: 'pages#search'
 
+  resources :restaurants, only: [:show]
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # 1 - I want a page with the list of all the products,
@@ -14,6 +16,10 @@ Rails.application.routes.draw do
   resources :meals do
     resources :reviews, only: [:new, :create ]
     resources :order_items, only: [:create]
+
+    collection do
+      get '/owned', to: 'meals#owned'
+    end
   end
 
   resources :reviews, only: [:destroy]
@@ -25,4 +31,6 @@ Rails.application.routes.draw do
   resources :orders, only: [:show, :index, :update]
   resources :seller_orders, only: [:show, :index, :update]
   resources :delivery_schedules, only: [:index, :new, :create, :destroy]
+
+
 end

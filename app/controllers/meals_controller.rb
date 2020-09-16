@@ -1,5 +1,5 @@
 class MealsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show, :index]
+  skip_before_action :authenticate_user!, only: [ :show, :index ]
   def new
     @meal = Meal.new
     authorize @meal
@@ -15,6 +15,12 @@ class MealsController < ApplicationController
     else
       render :new
     end
+  end
+
+ # owner meals
+  def owned
+    @meals = policy_scope(Meal).where(user_id: current_user.id)
+
   end
 
   # read

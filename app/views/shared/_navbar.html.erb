@@ -13,9 +13,9 @@
       <ul class="navbar-nav mr-auto">
         <% if user_signed_in? %>
 
-        <li class="nav-item">
+        <!-- Delivery schedules are hidded <li class="nav-item">
           <%= link_to "Check your delivery schedules", delivery_schedules_path, class: "nav-link" if current_user.seller? %>
-        </li>
+        </li> -->
 
         <li>
               <!-- # <a href="/meals/new">  create a new meal </a> -->
@@ -25,9 +25,22 @@
           <!-- orders check-->
           <%= link_to "Check your orders", seller_orders_path, class: "nav-link" if current_user.seller? %>
         </li>
+        <li>
+          <!-- orders check for buyer-->
+          <%= link_to "Ordered items", orders_path, class: "nav-link" if !current_user.seller? %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Owned meals", owned_meals_path, class: "nav-link" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Account", edit_user_registration_path, method: :get, class: "nav-link" %>
+        </li>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
+
 
         <% else %>
           <li class="nav-item">

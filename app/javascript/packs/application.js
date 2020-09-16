@@ -32,5 +32,5 @@ import { searchMeals } from '../search.js';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  searchMeals();
+ // searchMeals();
 });
