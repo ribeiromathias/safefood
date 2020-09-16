@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col">
       <%unless user_signed_in?%> 
-      <h1 class="text-center call-to-action">Browse through our wonderful selection of foods!</h1>
+        <h1 class="text-center call-to-action">Browse through our wonderful selection of foods!</h1>
       <%end%>
 
       <div class="form-inline m-3">
@@ -23,6 +23,11 @@
         <% end %>
       </div>
 
+      <% @restaurants&.each do |restaurant| %>
+        <div class="card btn search-button" data-restaurant-id="<%= restaurant.id %>">
+          <h3> <%= link_to restaurant.name, restaurant_path(restaurant) %> </h3> 
+        </div>
+      <% end %>
       <div class="cards">
         <% @meals.each do |meal| %>
           <%= link_to meal do %>
@@ -49,4 +54,6 @@
       </div>
     </div>
   </div>
+  
+
 </div>
