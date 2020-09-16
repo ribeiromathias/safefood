@@ -6,14 +6,6 @@
   padding: 8px;
 }
 
-.layout-background {
-  background-image: linear-gradient(rgba(255,255,255,1), rgba(0,0,0,0)), asset-url('food-background.jpg');
-  background-size: cover;
-  height: 100vh;
-}
-
-
-
 .card {
   //remove asset-url once the cards will be sent here from the controller
 
