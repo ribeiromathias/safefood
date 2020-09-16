@@ -48,13 +48,15 @@
     color: opacify($color: $gray, $amount: 0.5);
   }
 }
+.card-product-image {
+  border-right: 1px solid #eeeeee;
+}
 
 .card-product img {
   height: 100%;
   width: 120px;
   object-fit: cover;
   padding: 20px;
-  border-right: 1px solid #eeeeee;
 }
 
 .card-product h2 {

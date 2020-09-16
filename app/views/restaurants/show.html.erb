@@ -1,5 +1,6 @@
 <div class="restaurant-banner text-center p-3 bg-light">
-  <img class="circle mb-3" src="http://placehold.it/100x100" alt="test">
+  <img class="rounded-circle" mb-3" src="http://placehold.it/100x100" alt="test">
+  <!-- <%#= cl_image_tag(@restaurant.photo.key) %> -->
   <h1 class="h3"><%= @restaurant.name %></h1>
 </div>
 
@@ -7,7 +8,9 @@
 <div class="cards">
   <% @meals.each do |meal| %>
     <%= link_to meal, class: "card-product" do %>
-      <%= cl_image_tag(meal.photo.key) %>  
+      <div class="card-product-image">
+        <%= cl_image_tag(meal.photo.key, crop: :fill, width: 100, height: 100) %>
+      </div>  
       <div class="card-product-infos">
         <h2><%= meal.name %></h2>
         <p>$ <%= meal.offer_price %>,00 </p>

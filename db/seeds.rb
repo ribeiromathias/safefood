@@ -18,31 +18,36 @@ User.destroy_all
 
 puts "Instances destroyed... Creating new seller users"
 
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9jOUl9eUeSUOTetVID3D9uWco8i8xvwHWxA&usqp=CAU')
 sem_gluten = User.new
 sem_gluten.name = 'Sem Glúten'
 sem_gluten.seller = true
 sem_gluten.phone_number = "12345678"
 sem_gluten.address = "Rio de janeiro"
 sem_gluten.email = 'semgluten@gmail.com'
+sem_gluten.photo.attach(io: file, filename: 'nes.png')
 sem_gluten.password = "123456"
 sem_gluten.save!
 
-
+file = URI.open('https://i.pinimg.com/736x/24/05/94/240594ba5222de6cfd3a3c563e11642b.jpg')
 for_diabetic = User.new
 for_diabetic.seller = true
 for_diabetic.name = 'ForDiabetic'
 for_diabetic.phone_number = "87654321"
 for_diabetic.address = "Rio de janeiro"
 for_diabetic.email = 'fordiabetic@gmail.com'
+for_diabetic.photo.attach(io: file, filename: 'nes.png')
 for_diabetic.password = "123456"
 for_diabetic.save!
 
+file = URI.open('https://www.timpaan.nl/wp-content/uploads/2019/07/FD-logo.jpg')
 botanic_life_nutrition = User.new
 botanic_life_nutrition.seller = true
 botanic_life_nutrition.name = 'Botanic life nutrition'
 botanic_life_nutrition.phone_number = "87654321"
 botanic_life_nutrition.address = "Rio de janeiro"
 botanic_life_nutrition.email = 'botanic_life_nutrition@gmail.com'
+for_diabetic.photo.attach(io: file, filename: 'nes.png')
 botanic_life_nutrition.password = "123456"
 botanic_life_nutrition.save!
 
