@@ -1,9 +1,18 @@
 <!-- index action: seller_orders controler -->
+
+<div class="container">
+<h4>Your orders</h4>
+  <div class="seller-orders">
+
 <% if @orders.any? %>
 
 
   <% @orders.each do |order| %>
-   <h2><%= order.status %></h2>
+
+   <h4> Order #<%= order.id %>
+
+<span class="badge badge-success"><%= order.status %></span>
+   </h4>
     <ul>
 
       <% order.order_items.each do |order_item| %>
@@ -11,19 +20,23 @@
       <% end %>
 
     </ul>
-    <p> <%= "Customer address: #{order.user.address}, name: #{order.user.name},
-       phone number: #{order.user.phone_number}, email: #{order.user.email}"%> </p>
-    <% if order.status == "pending" %>
+    <ul>
+      <li>
+      <p> <%= "Customer address: #{order.user.address}, name: #{order.user.name},
+         phone number: #{order.user.phone_number}, email: #{order.user.email}, order date: #{order.updated_at}"%> </p>
+      <% if order.status == "pending" %>
 
-      <%= link_to "Confirm", seller_order_path(order, status: "approved"), method: :patch, class: "btn btn-flat btn-primary" %>
-      <%= link_to "Cancel", seller_order_path(order, status: "cancelled"), method: :patch, class: "btn btn-flat btn-danger" %>
-    <% end %>
-
+        <%= link_to "Confirm", seller_order_path(order, status: "approved"), method: :patch, class: "btn btn-flat btn-primary" %>
+        <%= link_to "Cancel", seller_order_path(order, status: "cancelled"), method: :patch, class: "btn btn-flat btn-danger" %>
+      <% end %>
+    </li>
+    </ul>
   <% end %>
 <% end %>
-
+  </div>
 
 
 <% if @orders.empty? %>
 <h2> No orders were made for you yet! </h2>
 <% end %>
+</div>
