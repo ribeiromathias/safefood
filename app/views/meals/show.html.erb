@@ -4,7 +4,7 @@
       <div class="pic-show">
         <%= cl_image_tag(@meal.photo.key) %>
       </div>
-      <div class="card-body card-show>
+      <div class="card-body card-show">
         <h2> <%= @meal.name %> </h2>
         <p class="border-price"> R$ <%= @meal.offer_price %>,00 </p>
         <p> <%= @meal.description %> </p>
@@ -25,7 +25,7 @@
         <!-- Reviews "paths check"-->
         <div>
           <%= link_to 'Edit', edit_meal_path(@meal) %> |
-          <%= link_to 'Back', meals_path %> |
+          <%= link_to 'Back', restaurant_path(id: @meal.user.id, restriction: @meal.restriction) %> 
           <%= link_to 'Leave a review', new_meal_review_path(@meal) %>
         </div>
       </div>
