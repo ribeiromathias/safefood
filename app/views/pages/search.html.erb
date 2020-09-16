@@ -1,11 +1,15 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col">
+
+   
+
       <%unless user_signed_in?%>
         <h1 class="text-center call-to-action">Browse through our wonderful selection of foods!</h1>
+
       <%end%>
 
-      <div class="form-inline m-3">
+      <div class="my-3">
         <%= form_tag search_path, method: :get do %>
 
           <%= text_field_tag :query,
@@ -18,16 +22,28 @@
 
           %>
 
-          <%= submit_tag "Search", class: "btn btn-secondary" %>
+          <%= submit_tag "Search", class: "btn btn-block btn-secondary mt-1 rounded-pill" %>
 
         <% end %>
       </div>
 
-      <% @restaurants&.each do |restaurant| %>
-        <div class="card btn search-button" data-restaurant-id="<%= restaurant.id %>">
-          <h3> <%= link_to restaurant.name, restaurant_path(restaurant, restriction: params[:restriction]) %> </h3>
-        </div>
-      <% end %>
+
+        <% @restaurants&.each do |restaurant| %>
+          <%= link_to restaurant_path(restaurant, restriction: params[:restriction]), class: "card-product" do %>
+            <div class="card-product-image"> 
+              <% if restaurant.photo.present? %>
+                <%= cl_image_tag(restaurant.photo.key) %>  
+              <% else %>
+                <img class="rounded-circle" src="http://placehold.it/100x100?text=no photo" alt="default photo">
+              <% end %>
+            </div>
+            <div class="card-product-infos">
+              <h2><%= restaurant.name %></h2>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      
 
     </div>
   </div>

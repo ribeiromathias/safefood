@@ -1,33 +1,23 @@
-<div class="container" style="margin-bottom: 50px">
+<div style="margin-bottom: 50px">
+  <div class="restaurant-banner text-center p-3 bg-light mb-3 mt-3">
+    <h1 class="h3 pt-3 pb-0">Your meals</h1>
+  </div>
   <%unless user_signed_in?%>
   <h1 class="text-center call-to-action">Browse through our wonderful selection of foods!</h1>
   <%end%>
+
   <div class="cards">
     <% @meals.each do |meal| %>
-      <%= link_to meal do %>
-        <div class="card-meal">
-<!-- width: "30%"  -->
-         <%= cl_image_tag(meal.photo.key, width: "30%") %>   <!-- check the comment down and see where u can replace-->
-          <div class="card-meal-infos">
-            <div>
-              <h2 class="card-meal-pricing">$ <%= meal.offer_price %></h2>
-              <h2><%= meal.name %></h2>
-              <h2><%= meal.description %></h2>
-              <h2><%= meal.restriction %></h2>
-              <!-- #cloudinary photo can be put here alternatively check it out -->
-            </div>
-            <div class="card-meal-user">
-              <p><em><%= meal.user.name %></em></p>
-              <p><em><%= meal.user.phone_number %></em></p>
-              <p><em><%= meal.user.email %></em></p>
-              <p><em><%= meal.user.address %></em></p>
-            </div>
-          </div>
+      <%= link_to meal, class: "card-product" do %>
+        <div class="card-product-image">
+          <%= cl_image_tag(meal.photo.key, crop: :fill, width: 100, height: 100) %>
+        </div>  
+        <div class="card-product-infos">
+          <h2><%= meal.name %></h2>
+          <p>$ <%= meal.offer_price %>,00 </p>
         </div>
       <% end %>
     <% end %>
   </div>
-  <div>
 
-  </div>
 </div>
