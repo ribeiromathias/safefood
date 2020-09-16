@@ -1,27 +1,17 @@
+<div class="restaurant-banner text-center p-3 bg-light">
+  <img class="circle mb-3" src="http://placehold.it/100x100" alt="test">
+  <h1 class="h3"><%= @restaurant.name %></h1>
+</div>
 
 
 <div class="cards">
-        <% @meals.each do |meal| %>
-          <%= link_to meal do %>
-            <div class="card-meal d-flex">
-                  <h6><%= @restaurant.name %></h5>
-              <%= cl_image_tag(meal.photo.key) %>   <!-- check the comment down and see where u can replace-->
-              <div class="card-meal-infos">
-                <div class="infos">
-                  <h4><%= meal.name %></h4>
-                  <p class="card-meal-pricing">$ <%= meal.offer_price %>,00</p>
-                  <!-- <p><%= meal.description %></p>
-                  <p><%= meal.restriction %></p>-->
-                  <!-- #cloudinary photo can be put here alternatively check it out --> 
-                </div>
-                <!-- <div class="card-meal-user">
-                  <p><em><%= meal.user.name %></em></p>
-                  <p><em><%= meal.user.phone_number %></em></p>
-                  <p><em><%= meal.user.email %></em></p>
-                  <p><em><%= meal.user.address %></em></p>
-                </div> -->
-              </div>
-            </div>
-          <% end %>
-        <% end %>
+  <% @meals.each do |meal| %>
+    <%= link_to meal, class: "card-product" do %>
+      <%= cl_image_tag(meal.photo.key) %>  
+      <div class="card-product-infos">
+        <h2><%= meal.name %></h2>
+        <p>$ <%= meal.offer_price %>,00 </p>
       </div>
+    <% end %>
+  <% end %>
+</div>
