@@ -1,7 +1,12 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col">
-      <%unless user_signed_in?%> 
+
+   
+
+      <%unless user_signed_in?%>
+        <h1 class="text-center call-to-action">Browse through our wonderful selection of foods!</h1>
+
       <%end%>
 
       <div class="my-3">
@@ -14,13 +19,14 @@
           %>
 
           <%= hidden_field_tag :restriction, params[:restriction]
-          
+
           %>
 
           <%= submit_tag "Search", class: "btn btn-block btn-secondary mt-1 rounded-pill" %>
 
         <% end %>
       </div>
+
 
         <% @restaurants&.each do |restaurant| %>
           <%= link_to restaurant_path(restaurant, restriction: params[:restriction]), class: "card-product" do %>
@@ -39,11 +45,8 @@
       </div>
       
 
-
-
-
     </div>
   </div>
-  
+
 
 </div>
