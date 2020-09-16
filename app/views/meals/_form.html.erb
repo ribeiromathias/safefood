@@ -1,14 +1,23 @@
-<%= simple_form_for meal do |f| %>
+<div class="container">
+  <div class="row justify-content-center">
+     <div class="col col-lg-4">
 
-   <%= f.input :name %>
-   <%= f.input :offer_price %>
-   <%= f.input :description %>
-    <%= f.input :restriction %>
-   <%= f.input :photo, as: :file, class:"btn-buzz" %>
+       <div class="signup-card">
+         <%= simple_form_for meal do |f| %>
+
+            <%= f.input :name %>
+            <%= f.input :offer_price %>
+            <%= f.input :description %>
+            <%= f.input :restriction %>
+            <%= f.input :photo, as: :file, class:"btn-buzz" %>
     
-   <div class="form-actions">
-        <%= f.button :submit, class: "btn" %>
-   </div>
+       <div class="form-actions green-button">
+         <%= f.button :submit, class: "btn btn-flat" %>
+       </div>
 
-<% end %>
+       <% end %>
+       </div>
+     </div>
+   </div>
+</div>
 
