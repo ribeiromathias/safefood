@@ -8,7 +8,7 @@
 
 require 'open-uri'
 
-puts "destroying all users and meals..."
+
 
 OrderItem.destroy_all
 Meal.destroy_all
@@ -40,16 +40,82 @@ for_diabetic.photo.attach(io: file, filename: 'nes.png')
 for_diabetic.password = "123456"
 for_diabetic.save!
 
-file = URI.open('https://www.timpaan.nl/wp-content/uploads/2019/07/FD-logo.jpg')
-botanic_life_nutrition = User.new
-botanic_life_nutrition.seller = true
-botanic_life_nutrition.name = 'Botanic life nutrition'
-botanic_life_nutrition.phone_number = "87654321"
-botanic_life_nutrition.address = "Rio de janeiro"
-botanic_life_nutrition.email = 'botanic_life_nutrition@gmail.com'
-for_diabetic.photo.attach(io: file, filename: 'nes.png')
-botanic_life_nutrition.password = "123456"
-botanic_life_nutrition.save!
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQYTIzXXiu9PiczYpDDuI4uhdS7c4XtpqrMlg&usqp=CAU')
+national_tropical_botanical_garden = User.new
+national_tropical_botanical_garden.seller = true
+national_tropical_botanical_garden.name = 'National tropical botanical garden foods'
+national_tropical_botanical_garden.phone_number = "87654321"
+national_tropical_botanical_garden.address = "Rio de janeiro"
+national_tropical_botanical_garden.email = 'national_tropical_botanical_garden@gmail.com'
+national_tropical_botanical_garden.photo.attach(io: file, filename: 'nes.png')
+national_tropical_botanical_garden.password = "123456"
+national_tropical_botanical_garden.save!
+
+file = URI.open('https://cdn.shopify.com/s/files/1/0227/9073/3888/files/Logo_NaturLife_2019.jpg?height=628&pad_color=fff&v=1549527198&width=1200')
+natur_life = User.new
+natur_life.seller = true
+natur_life.name = 'Natur life'
+natur_life.phone_number = "87654321"
+natur_life.address = "Rio de janeiro"
+natur_life.email = 'natur_life@gmail.com'
+natur_life.photo.attach(io: file, filename: 'nes.png')
+natur_life.password = "123456"
+natur_life.save!
+
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTPjv_s9ECWy0Vy-SQFTadUDunknqqX-gN6iA&usqp=CAU')
+rica_raiz_vegan = User.new
+rica_raiz_vegan.seller = true
+rica_raiz_vegan.name = 'Rica raiz vegan'
+rica_raiz_vegan.phone_number = "87654321"
+rica_raiz_vegan.address = "Rio de janeiro"
+rica_raiz_vegan.email = 'rica_raiz_vegan@gmail.com'
+rica_raiz_vegan.photo.attach(io: file, filename: 'nes.png')
+rica_raiz_vegan.password = "123456"
+rica_raiz_vegan.save!
+
+file = URI.open('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-logo-template-design-3a6c0ed0ab0a8be68ee06430fa018fa5_screen.jpg?ts=1566606306')
+food_factory = User.new
+food_factory.seller = true
+food_factory.name = 'food factory'
+food_factory.phone_number = "87654321"
+food_factory.address = "Rio de janeiro"
+food_factory.email = 'food_factory@gmail.com'
+food_factory.photo.attach(io: file, filename: 'nes.png')
+food_factory.password = "123456"
+food_factory.save!
+
+file = URI.open('https://img.freepik.com/vecteurs-libre/bagel-boy-boire-du-cafe_10316-2.jpg?size=338&ext=jpg')
+oli_bagel_shop = User.new
+oli_bagel_shop.seller = true
+oli_bagel_shop.name = "Oli's bagel shop"
+oli_bagel_shop.phone_number = "87654321"
+oli_bagel_shop.address = "Rio de janeiro"
+oli_bagel_shop.email = 'oli_bagel_shop@gmail.com'
+oli_bagel_shop.photo.attach(io: file, filename: 'nes.png')
+oli_bagel_shop.password = "123456"
+oli_bagel_shop.save!
+
+file = URI.open('https://idf.org/images/site1/content/Blue-circle.jpg')
+diabetic_nutrition = User.new
+diabetic_nutrition.seller = true
+diabetic_nutrition.name = "Diabetic nutrition"
+diabetic_nutrition.phone_number = "87654321"
+diabetic_nutrition.address = "Rio de janeiro"
+diabetic_nutrition.email = 'diabetic_nutrition@gmail.com'
+diabetic_nutrition.photo.attach(io: file, filename: 'nes.png')
+diabetic_nutrition.password = "123456"
+diabetic_nutrition.save!
+
+file = URI.open('https://pyxis.nymag.com/v1/imgs/f09/94e/6a78c44174182031cfa42e32cd79ea3c0c-noma-.rsquare.w700.jpg')
+noma = User.new
+noma.seller = true
+noma.name = "Noma"
+noma.phone_number = "87654321"
+noma.address = "Rio de janeiro"
+noma.email = 'noma@gmail.com'
+noma.photo.attach(io: file, filename: 'nes.png')
+noma.password = "123456"
+noma.save!
 
 puts "Instances destroyed... Creating new buyer user"
 
@@ -63,7 +129,17 @@ milene.save!
 
 puts "user created... meals for sellers..."
 
-puts "celiac foods' seller"
+puts "celiac foods"
+
+file = URI.open('https://i.pinimg.com/originals/c2/f2/dc/c2f2dc9d8de8e8c86a49f55693dfef6a.jpg')
+bagel = Meal.new
+bagel.user = oli_bagel_shop
+bagel.name = "Vegan and celiac friendly bagels"
+bagel.offer_price = 5
+bagel.description = "Fresh NY style bagels with local ingredients"
+bagel.restriction = "celiac"
+bagel.photo.attach(io: file, filename: 'nes.png')
+bagel.save!
 
 file = URI.open('https://i.ytimg.com/vi/xCc2Qn4vxt4/maxresdefault.jpg')
 celiac_focaccia = Meal.new
@@ -85,9 +161,39 @@ celiac_fetuccine.restriction = "celiac"
 celiac_fetuccine.photo.attach(io: file, filename: 'nes.png')
 celiac_fetuccine.save!
 
+file = URI.open('https://www.chatelaine.com/wp-content/uploads/2017/02/Artisanal-margherita-pizza-1-e1492634150494.jpg')
+pizza = Meal.new
+pizza.user = sem_gluten
+pizza.name = "Pizza margherita with vegan mozzarella and glute-free dough"
+pizza.offer_price = 3
+pizza.description = "Super tasty pizza, family size with gluten-free flour and vegan cheese, basil and olive oil"
+pizza.restriction = "celiac"
+pizza.photo.attach(io: file, filename: 'nes.png')
+pizza.save!
+
+file = URI.open('https://www.onceuponachef.com/images/2020/03/Crusty-Bread-760x984.jpg')
+bread = Meal.new
+bread.user = sem_gluten
+bread.name = "Bread loaf"
+bread.offer_price = 3
+bread.description = "Bread loaf -gluten free-baked in woods oven"
+bread.restriction = "celiac"
+bread.photo.attach(io: file, filename: 'nes.png')
+bread.save!
+
+file = URI.open('https://www.tasteofhome.com/wp-content/uploads/2018/01/Monster-Cookies_EXPS_TOHON19_9150_E06_18_8b-1.jpg')
+cookies = Meal.new
+cookies.user = sem_gluten
+cookies.name = "Chocolate chip cookies"
+cookies.offer_price = 3
+cookies.description = "Chocolate, gluten-free flour and lots of love"
+cookies.restriction = "celiac"
+cookies.photo.attach(io: file, filename: 'nes.png')
+cookies.save!
+
 file = URI.open('https://storcpdkenticomedia.blob.core.windows.net/media/recipemanagementsystem/media/recipe-media-files/recipes/retail/x17/17607-caramel-apple-pie-760x580.jpg?ext=.jpg')
 celiac_apple_pie = Meal.new
-celiac_apple_pie.user = botanic_life_nutrition
+celiac_apple_pie.user = natur_life
 celiac_apple_pie.name = "Crispy glute-free Applepie"
 celiac_apple_pie.offer_price = 3
 celiac_apple_pie.description = "American Apple pie for celiacs, using only gluten-free flour"
@@ -95,7 +201,47 @@ celiac_apple_pie.restriction = "celiac"
 celiac_apple_pie.photo.attach(io: file, filename: 'nes.png')
 celiac_apple_pie.save!
 
-puts "diabetic foods' seller"
+file = URI.open('https://www.seriouseats.com/recipes/images/2011/09/buns%20(2).JPG')
+buns = Meal.new
+buns.user = food_factory
+buns.name = "Burger buns all gluten free"
+buns.offer_price = 3
+buns.description = "American burgers bread for celiacs, using only gluten-free flour"
+buns.restriction = "celiac"
+buns.photo.attach(io: file, filename: 'nes.png')
+buns.save!
+
+file = URI.open('https://monkeyandmekitchenadventures.com/wp-content/uploads/2019/01/Ultimate-Healthy-Vegan-Black-Bean-Burger_06.jpg')
+vegan_burgers = Meal.new
+vegan_burgers.user = national_tropical_botanical_garden
+vegan_burgers.name = "Vegan/celiac burgers"
+vegan_burgers.offer_price = 5
+vegan_burgers.description = "Homemade burgers completely vegan and gluten-free."
+vegan_burgers.restriction = "celiac"
+vegan_burgers.photo.attach(io: file, filename: 'nes.png')
+vegan_burgers.save!
+
+file = URI.open('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/summer-rolls-recipe-1586457460.jpg?crop=0.951xw:0.635xh;0.0119xw,0.194xh&resize=980:*')
+vegan_summer_rolls = Meal.new
+vegan_summer_rolls.user = national_tropical_botanical_garden
+vegan_summer_rolls.name = "Summer rools vegan and celiac friendly"
+vegan_summer_rolls.offer_price = 5
+vegan_summer_rolls.description = "Homemade burgers celiac and vegan friendly."
+vegan_summer_rolls.restriction = "celiac"
+vegan_summer_rolls.photo.attach(io: file, filename: 'nes.png')
+vegan_summer_rolls.save!
+
+file = URI.open('https://i.pinimg.com/originals/19/e0/c1/19e0c1bdac8889638c0814900988eec4.jpg')
+vegetable_plate = Meal.new
+vegetable_plate.user = national_tropical_botanical_garden
+vegetable_plate.name = "Plate with fresh garden vegetables: celiacs and vegan"
+vegetable_plate.offer_price = 5
+vegetable_plate.description = "Pre-assembled plate with garden's veggies: tomatoes, carrots, broccoli, fresh salad, and cucumbers"
+vegetable_plate.restriction = "celiac"
+vegetable_plate.photo.attach(io: file, filename: 'nes.png')
+vegetable_plate.save!
+
+puts "diabetic foods"
 
 file = URI.open('https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/dark-chocolate-1296x728-header.jpg?w=1155&h=1528')
 chocolate_for_diabetic = Meal.new
@@ -119,7 +265,7 @@ cake_for_diabetic.save!
 
 file = URI.open('https://diabetesstrong.com/wp-content/uploads/2018/05/keto-cobb-salad-1.jpg')
 keto_cobb_salad = Meal.new
-keto_cobb_salad.user = botanic_life_nutrition
+keto_cobb_salad.user = for_diabetic
 keto_cobb_salad.name = "Healty diabetic friendly salad"
 keto_cobb_salad.offer_price = 2
 keto_cobb_salad.description = "High fat, low carb Keto Cobb Salad - Diabetic friendly"
@@ -127,11 +273,61 @@ keto_cobb_salad.restriction = "diabetic"
 keto_cobb_salad.photo.attach(io: file, filename: 'nes.png')
 keto_cobb_salad.save!
 
-puts "vegan foods' seller"
+file = URI.open('https://i.pinimg.com/originals/19/e0/c1/19e0c1bdac8889638c0814900988eec4.jpg')
+vegetable_plate = Meal.new
+vegetable_plate.user = national_tropical_botanical_garden
+vegetable_plate.name = "Plate with fresh garden veggies, perfect for diabetic friends"
+vegetable_plate.offer_price = 5
+vegetable_plate.description = "Pre-assembled plate with garden's veggies: tomatoes, carrots, broccoli, fresh salad, and cucumbers"
+vegetable_plate.restriction = "diabetic"
+vegetable_plate.photo.attach(io: file, filename: 'nes.png')
+vegetable_plate.save!
+
+file = URI.open('https://st3.depositphotos.com/4590583/18471/i/1600/depositphotos_184710850-stock-photo-tropical-fruit-wooden-box-papaya.jpg')
+fruit_boxes = Meal.new
+fruit_boxes.user = national_tropical_botanical_garden
+fruit_boxes.name = "Seasonal fruit boxes"
+fruit_boxes.offer_price = 5
+fruit_boxes.description = "The good news is that fruit is healthy to eat for people with diabetes: Mango, papaya, ananas, dragon fruit, jackfruits and more"
+fruit_boxes.restriction = "diabetic"
+fruit_boxes.photo.attach(io: file, filename: 'nes.png')
+fruit_boxes.save!
+
+file = URI.open('https://www.asweetpeachef.com/wp-content/uploads/2017/05/high-protein-fruit-smoothie-recipes-13.jpg')
+assorted_shakes = Meal.new
+assorted_shakes.user = national_tropical_botanical_garden
+assorted_shakes.name = " 5 Nutrional shakes with our fruits: no sugar"
+assorted_shakes.offer_price = 5
+assorted_shakes.description = "Vegan protein shakes: strawberry, mango, jackfruit, blueberry, and banana-chocolate"
+assorted_shakes.restriction = "diabetic"
+assorted_shakes.photo.attach(io: file, filename: 'nes.png')
+assorted_shakes.save!
+
+file = URI.open('https://www.asweetpeachef.com/wp-content/uploads/2017/05/high-protein-fruit-smoothie-recipes-13.jpg')
+gnocchi = Meal.new
+gnocchi.user = diabetic_nutrition
+gnocchi.name = "Gnocchi with Spinach and Walnuts: perfect for diabetics"
+gnocchi.offer_price = 5
+gnocchi.description = "Made from a diabetic person, for diabetic people"
+gnocchi.restriction = "diabetic"
+gnocchi.photo.attach(io: file, filename: 'nes.png')
+gnocchi.save!
+
+file = URI.open('https://www.asweetpeachef.com/wp-content/uploads/2017/05/high-protein-fruit-smoothie-recipes-13.jpg')
+burritos = Meal.new
+burritos.user = diabetic_nutrition
+burritos.name = "burritos mexican style: perfect for diabetics"
+burritos.offer_price = 5
+burritos.description = "High quality diabetic food"
+burritos.restriction = "diabetic"
+burritos.photo.attach(io: file, filename: 'nes.png')
+burritos.save!
+
+puts "vegan foods"
 
 file = URI.open('https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2019/07/Falafel-7-1-500x500.jpg')
 falafel = Meal.new
-falafel.user = botanic_life_nutrition
+falafel.user = national_tropical_botanical_garden
 falafel.name = "Vegan falafel"
 falafel.offer_price = 3
 falafel.description = "Spiced and blended cheeckpees deepfried for vegan perfection."
@@ -141,7 +337,7 @@ falafel.save!
 
 file = URI.open('https://www.recipetineats.com/wp-content/uploads/2017/05/Lasagne-recipe-3-main-square.jpg?w=500&h=375&crop=1')
 vegan_lasagne = Meal.new
-vegan_lasagne.user = botanic_life_nutrition
+vegan_lasagne.user = national_tropical_botanical_garden
 vegan_lasagne.name = "Vegan lasagne"
 vegan_lasagne.offer_price = 4
 vegan_lasagne.description = "Homemade lasagne with vegan besciamella and cheese."
@@ -151,10 +347,71 @@ vegan_lasagne.save!
 
 file = URI.open('https://monkeyandmekitchenadventures.com/wp-content/uploads/2019/01/Ultimate-Healthy-Vegan-Black-Bean-Burger_06.jpg')
 vegan_burgers = Meal.new
-vegan_burgers.user = botanic_life_nutrition
+vegan_burgers.user = national_tropical_botanical_garden
 vegan_burgers.name = "Vegan burgers"
 vegan_burgers.offer_price = 5
 vegan_burgers.description = "Homemade burgers completely vegan."
 vegan_burgers.restriction = "vegan"
 vegan_burgers.photo.attach(io: file, filename: 'nes.png')
 vegan_burgers.save!
+
+file = URI.open('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/summer-rolls-recipe-1586457460.jpg?crop=0.951xw:0.635xh;0.0119xw,0.194xh&resize=980:*')
+vegan_summer_rolls = Meal.new
+vegan_summer_rolls.user = national_tropical_botanical_garden
+vegan_summer_rolls.name = "Summer rools"
+vegan_summer_rolls.offer_price = 5
+vegan_summer_rolls.description = "Homemade burgers completely vegan."
+vegan_summer_rolls.restriction = "vegan"
+vegan_summer_rolls.photo.attach(io: file, filename: 'nes.png')
+vegan_summer_rolls.save!
+
+file = URI.open('https://i.pinimg.com/originals/19/e0/c1/19e0c1bdac8889638c0814900988eec4.jpg')
+vegetable_plate = Meal.new
+vegetable_plate.user = national_tropical_botanical_garden
+vegetable_plate.name = "Plate with fresh vegetable from our garden"
+vegetable_plate.offer_price = 5
+vegetable_plate.description = "Pre-assembled plate with garden's veggies: tomatoes, carrots, broccoli, fresh salad, and cucumbers"
+vegetable_plate.restriction = "vegan"
+vegetable_plate.photo.attach(io: file, filename: 'nes.png')
+vegetable_plate.save!
+
+file = URI.open('https://st3.depositphotos.com/4590583/18471/i/1600/depositphotos_184710850-stock-photo-tropical-fruit-wooden-box-papaya.jpg')
+fruit_boxes = Meal.new
+fruit_boxes.user = national_tropical_botanical_garden
+fruit_boxes.name = "Seasonal fruit boxes"
+fruit_boxes.offer_price = 5
+fruit_boxes.description = "Mango, papaya, ananas, dragon fruit, jackfruits and more"
+fruit_boxes.restriction = "vegan"
+fruit_boxes.photo.attach(io: file, filename: 'nes.png')
+fruit_boxes.save!
+
+file = URI.open('https://www.asweetpeachef.com/wp-content/uploads/2017/05/high-protein-fruit-smoothie-recipes-13.jpg')
+assorted_shakes = Meal.new
+assorted_shakes.user = national_tropical_botanical_garden
+assorted_shakes.name = " 5 Nutrional shakes with our fruits"
+assorted_shakes.offer_price = 5
+assorted_shakes.description = "Vegan protein shakes: strawberry, mango, jackfruit, blueberry, and banana-chocolate"
+assorted_shakes.restriction = "vegan"
+assorted_shakes.photo.attach(io: file, filename: 'nes.png')
+assorted_shakes.save!
+
+
+file = URI.open('https://cdn.loveandlemons.com/wp-content/uploads/2014/10/vegetable-soup.jpg')
+vegan_soup = Meal.new
+vegan_soup.user = national_tropical_botanical_garden
+vegan_soup.name = "Soup made from our garden's veggies"
+vegan_soup.offer_price = 5
+vegan_soup.description = "This "
+vegan_soup.restriction = "vegan"
+vegan_soup.photo.attach(io: file, filename: 'nes.png')
+vegan_soup.save!
+
+file = URI.open('https://i.pinimg.com/originals/c2/f2/dc/c2f2dc9d8de8e8c86a49f55693dfef6a.jpg')
+bagel = Meal.new
+bagel.user = oli_bagel_shop
+bagel.name = "Vegan and celiac friendly bagels"
+bagel.offer_price = 5
+bagel.description = "Fresh NY style bagels with local ingredients"
+bagel.restriction = "vegan"
+bagel.photo.attach(io: file, filename: 'nes.png')
+bagel.save!

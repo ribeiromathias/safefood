@@ -20,7 +20,7 @@ class PagesController < ApplicationController
     if params[:query].present? && params[:restriction].present?
       sql_query = " \
       meals.restriction @@ :restriction \
-      AND users.name ILIKE :query \
+      AND (users.name ILIKE :query OR meals.name ILIKE :query) 
       "
       @meals = Meal.joins(:user).where(sql_query, query: "%#{params[:query]}%",
       restriction: "%#{params[:restriction]}")
