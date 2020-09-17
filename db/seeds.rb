@@ -8,7 +8,7 @@
 
 require 'open-uri'
 
-puts "destroying all users and meals..."
+
 
 OrderItem.destroy_all
 Meal.destroy_all
