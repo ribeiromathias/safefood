@@ -6,9 +6,9 @@
       </div>
       <div class="card-body card-show">
         <h2> <%= @meal.name %> </h2>
-        <p class="border-price"> R$ <%= @meal.offer_price %>,00 </p>
-        <p> <%= @meal.description %> </p>
-        <p> <%= @meal.restriction %> </p>
+        <p class="border-price"> <strong>Price: </strong> $<%= @meal.offer_price %>,00 </p>
+        <p> <strong>Description: </strong> <%= @meal.description %> </p>
+        <p> <strong>Restriction: </strong><%= @meal.restriction %> </p>
 
         <% if current_user == @meal.user %>
           <% link_to "edit", edit_meal_path(@meal) %>

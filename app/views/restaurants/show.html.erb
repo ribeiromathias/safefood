@@ -1,5 +1,7 @@
-<div class="restaurant-banner text-center p-3 bg-light mb-3 m-3">
-  <img class="rounded-circle" src="http://placehold.it/100x100?text=no photo" alt="default photo"
+<div class="restaurant-banner text-center p-3 bg-white mb-3 m-3">
+  <div class="card-product-image"> 
+    <%= cl_image_tag(@restaurant.photo.key, width: 150)%>
+  </div>
   <!-- <%#= cl_image_tag(@restaurant.photo.key) %> -->
   <h1 class="h3 pt-3 pb-0"><%= @restaurant.name %></h1>
 </div>
@@ -13,7 +15,9 @@
       </div>  
       <div class="card-product-infos">
         <h2><%= meal.name %></h2>
-        <p>$ <%= meal.offer_price %>,00 </p>
+        <p><strong>Price: </strong> $<%= meal.offer_price %>,00 </p>
+        <p> <strong>Click for description</p>
+
       </div>
     <% end %>
   <% end %>
