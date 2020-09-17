@@ -34,6 +34,15 @@ body {
 
   .veg-pic {
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('img-vegan.jpg');
+    p {
+
+      background-color: #01DF85;
+      color:white;
+      border-radius: 25px;
+      padding: 8px;
+      font-weight: bold;
+      width: 100px;
+    }
   }
 
   .cel-pic {
