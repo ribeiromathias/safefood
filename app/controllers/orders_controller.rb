@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     authorize @order
-    if ["pending", "cancelled"].include?(params[:status])
+    if ["pending", "cancelled", "confirmed"].include?(params[:status])
       @order.update(status: params[:status])
       redirect_to orders_path
     else
