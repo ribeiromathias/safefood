@@ -10,9 +10,10 @@
             <%= f.input :description %>
             <%= f.input :restriction %>
             <%= f.input :photo, as: :file, class:"btn-buzz" %>
-    
+
        <div class="form-actions green-button">
          <%= f.button :submit, class: "btn btn-flat" %>
+         <%= link_to "Back to meals", meals_path, class: "btn btn-outline-secondary mt-3 w-100" %>
        </div>
 
        <% end %>
