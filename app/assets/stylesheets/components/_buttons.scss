@@ -10,3 +10,17 @@
   background: #1BCB7F;
   color: white;
 }
+
+.btn-links {
+
+  color: black;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #e0e0e0;
+  transition: background 0.3s ease;
+}
+
+.btn-links:hover {
+  background: #e0e0e0;
+  color: white;
+}
