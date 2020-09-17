@@ -8,7 +8,7 @@
 
 require 'open-uri'
 
-puts "destroying all users and meals..."
+
 
 OrderItem.destroy_all
 Meal.destroy_all
@@ -84,6 +84,39 @@ food_factory.photo.attach(io: file, filename: 'nes.png')
 food_factory.password = "123456"
 food_factory.save!
 
+file = URI.open('https://img.freepik.com/vecteurs-libre/bagel-boy-boire-du-cafe_10316-2.jpg?size=338&ext=jpg')
+oli_bagel_shop = User.new
+oli_bagel_shop.seller = true
+oli_bagel_shop.name = "Oli's bagel shop"
+oli_bagel_shop.phone_number = "87654321"
+oli_bagel_shop.address = "Rio de janeiro"
+oli_bagel_shop.email = 'oli_bagel_shop@gmail.com'
+oli_bagel_shop.photo.attach(io: file, filename: 'nes.png')
+oli_bagel_shop.password = "123456"
+oli_bagel_shop.save!
+
+file = URI.open('https://idf.org/images/site1/content/Blue-circle.jpg')
+diabetic_nutrition = User.new
+diabetic_nutrition.seller = true
+diabetic_nutrition.name = "Diabetic nutrition"
+diabetic_nutrition.phone_number = "87654321"
+diabetic_nutrition.address = "Rio de janeiro"
+diabetic_nutrition.email = 'diabetic_nutrition@gmail.com'
+diabetic_nutrition.photo.attach(io: file, filename: 'nes.png')
+diabetic_nutrition.password = "123456"
+diabetic_nutrition.save!
+
+file = URI.open('https://pyxis.nymag.com/v1/imgs/f09/94e/6a78c44174182031cfa42e32cd79ea3c0c-noma-.rsquare.w700.jpg')
+noma = User.new
+noma.seller = true
+noma.name = "Noma"
+noma.phone_number = "87654321"
+noma.address = "Rio de janeiro"
+noma.email = 'noma@gmail.com'
+noma.photo.attach(io: file, filename: 'nes.png')
+noma.password = "123456"
+noma.save!
+
 puts "Instances destroyed... Creating new buyer user"
 
 milene = User.new
@@ -97,6 +130,16 @@ milene.save!
 puts "user created... meals for sellers..."
 
 puts "celiac foods"
+
+file = URI.open('https://i.pinimg.com/originals/c2/f2/dc/c2f2dc9d8de8e8c86a49f55693dfef6a.jpg')
+bagel = Meal.new
+bagel.user = oli_bagel_shop
+bagel.name = "Vegan and celiac friendly bagels"
+bagel.offer_price = 5
+bagel.description = "Fresh NY style bagels with local ingredients"
+bagel.restriction = "celiac"
+bagel.photo.attach(io: file, filename: 'nes.png')
+bagel.save!
 
 file = URI.open('https://i.ytimg.com/vi/xCc2Qn4vxt4/maxresdefault.jpg')
 celiac_focaccia = Meal.new
@@ -181,7 +224,7 @@ vegan_burgers.save!
 file = URI.open('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/summer-rolls-recipe-1586457460.jpg?crop=0.951xw:0.635xh;0.0119xw,0.194xh&resize=980:*')
 vegan_summer_rolls = Meal.new
 vegan_summer_rolls.user = national_tropical_botanical_garden
-vegan_summer_rolls.name = "Summer rools"
+vegan_summer_rolls.name = "Summer rools vegan and celiac friendly"
 vegan_summer_rolls.offer_price = 5
 vegan_summer_rolls.description = "Homemade burgers celiac and vegan friendly."
 vegan_summer_rolls.restriction = "celiac"
@@ -191,7 +234,7 @@ vegan_summer_rolls.save!
 file = URI.open('https://i.pinimg.com/originals/19/e0/c1/19e0c1bdac8889638c0814900988eec4.jpg')
 vegetable_plate = Meal.new
 vegetable_plate.user = national_tropical_botanical_garden
-vegetable_plate.name = "Plate with fresh vegetable from our garden: veggies are good also for celiacs"
+vegetable_plate.name = "Plate with fresh garden vegetables: celiacs and vegan"
 vegetable_plate.offer_price = 5
 vegetable_plate.description = "Pre-assembled plate with garden's veggies: tomatoes, carrots, broccoli, fresh salad, and cucumbers"
 vegetable_plate.restriction = "celiac"
@@ -233,7 +276,7 @@ keto_cobb_salad.save!
 file = URI.open('https://i.pinimg.com/originals/19/e0/c1/19e0c1bdac8889638c0814900988eec4.jpg')
 vegetable_plate = Meal.new
 vegetable_plate.user = national_tropical_botanical_garden
-vegetable_plate.name = "Plate with fresh vegetable from our garden, perfect for diabetic friends"
+vegetable_plate.name = "Plate with fresh garden veggies, perfect for diabetic friends"
 vegetable_plate.offer_price = 5
 vegetable_plate.description = "Pre-assembled plate with garden's veggies: tomatoes, carrots, broccoli, fresh salad, and cucumbers"
 vegetable_plate.restriction = "diabetic"
@@ -260,6 +303,25 @@ assorted_shakes.restriction = "diabetic"
 assorted_shakes.photo.attach(io: file, filename: 'nes.png')
 assorted_shakes.save!
 
+file = URI.open('https://www.asweetpeachef.com/wp-content/uploads/2017/05/high-protein-fruit-smoothie-recipes-13.jpg')
+gnocchi = Meal.new
+gnocchi.user = diabetic_nutrition
+gnocchi.name = "Gnocchi with Spinach and Walnuts: perfect for diabetics"
+gnocchi.offer_price = 5
+gnocchi.description = "Made from a diabetic person, for diabetic people"
+gnocchi.restriction = "diabetic"
+gnocchi.photo.attach(io: file, filename: 'nes.png')
+gnocchi.save!
+
+file = URI.open('https://www.asweetpeachef.com/wp-content/uploads/2017/05/high-protein-fruit-smoothie-recipes-13.jpg')
+burritos = Meal.new
+burritos.user = diabetic_nutrition
+burritos.name = "burritos mexican style: perfect for diabetics"
+burritos.offer_price = 5
+burritos.description = "High quality diabetic food"
+burritos.restriction = "diabetic"
+burritos.photo.attach(io: file, filename: 'nes.png')
+burritos.save!
 
 puts "vegan foods"
 
@@ -343,3 +405,13 @@ vegan_soup.description = "This "
 vegan_soup.restriction = "vegan"
 vegan_soup.photo.attach(io: file, filename: 'nes.png')
 vegan_soup.save!
+
+file = URI.open('https://i.pinimg.com/originals/c2/f2/dc/c2f2dc9d8de8e8c86a49f55693dfef6a.jpg')
+bagel = Meal.new
+bagel.user = oli_bagel_shop
+bagel.name = "Vegan and celiac friendly bagels"
+bagel.offer_price = 5
+bagel.description = "Fresh NY style bagels with local ingredients"
+bagel.restriction = "vegan"
+bagel.photo.attach(io: file, filename: 'nes.png')
+bagel.save!
