@@ -51,7 +51,7 @@ national_tropical_botanical_garden.photo.attach(io: file, filename: 'nes.png')
 national_tropical_botanical_garden.password = "123456"
 national_tropical_botanical_garden.save!
 
-file = URI.open('https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0006%2F8127%2F9532%2Ffiles%2FNatural_life_logo_1200x.png%3Fv%3D1581535440&imgrefurl=https%3A%2F%2Fnaturallife.co.za%2F&tbnid=RFSXczAWX9697M&vet=12ahUKEwi_6fbgvvDrAhXNsioKHW8WDlcQMygFegUIARDLAQ..i&docid=OQCqoM_TI1R-JM&w=1200&h=800&q=natur%20life%20logo&ved=2ahUKEwi_6fbgvvDrAhXNsioKHW8WDlcQMygFegUIARDLAQ')
+file = URI.open('https://cdn.shopify.com/s/files/1/0227/9073/3888/files/Logo_NaturLife_2019.jpg?height=628&pad_color=fff&v=1549527198&width=1200')
 natur_life = User.new
 natur_life.seller = true
 natur_life.name = 'Natur life'
