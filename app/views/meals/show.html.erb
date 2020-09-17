@@ -5,6 +5,7 @@
         <%= cl_image_tag(@meal.photo.key) %>
       </div>
       <div class="card-body card-show">
+
         <h1 class="h3"> <%= @meal.name %> </h1>
         <p class="border-price"> Price: $<%= @meal.offer_price %>,00 </p>
         <p> <strong>Description: </strong><%= @meal.description %> </p>

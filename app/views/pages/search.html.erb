@@ -5,7 +5,7 @@
 
 
       <%unless user_signed_in?%>
-        <h1 class="h4 pt-3 pb-0">Browse through our wonderful selection of foods!</h1>
+        <h1 class="h4 pt-3 pb-0 text-center">Browse through our wonderful selection of foods!</h1>
 
       <%end%>
 
@@ -27,21 +27,25 @@
         <% end %>
       </div>
 
-
-        <% @restaurants&.each do |restaurant| %>
-          <%= link_to restaurant_path(restaurant, restriction: params[:restriction]), class: "card-product" do %>
-            <div class="card-product-image">
-              <% if restaurant.photo.present? %>
-                <%= cl_image_tag(restaurant.photo.key) %>
-              <% else %>
-                <img class="rounded-circle" src="http://placehold.it/100x100?text=no photo" alt="default photo">
-              <% end %>
-            </div>
-            <div class="card-product-infos">
-              <h2><%= restaurant.name %></h2>
-            </div>
+        <% if @restaurants.length > 0 %>
+          <% @restaurants&.each do |restaurant| %>
+            <%= link_to restaurant_path(restaurant, restriction: params[:restriction]), class: "card-product" do %>
+              <div class="card-product-image">
+                <% if restaurant.photo.present? %>
+                  <%= cl_image_tag(restaurant.photo.key) %>
+                <% else %>
+                  <img class="rounded-circle" src="http://placehold.it/100x100?text=no photo" alt="default photo">
+                <% end %>
+              </div>
+              <div class="card-product-infos">
+                <h2><%= restaurant.name %></h2>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
+        <% else %>
+          <h6> OPS! No restaurant found: search again! :) </h6>
+        <% end  %>
+        
       </div>
 
 
