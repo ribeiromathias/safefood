@@ -31,22 +31,26 @@
       <% end %>
       </div>
 -->
-      <div class="btn veg-pic" style="height: 125px; border-radius: 5px; position: relative;">
-        <%= link_to search_path(restriction: "vegan"), style:"position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;" do %>
+      <div class="btn veg-pic image-center">
+        <%= link_to search_path(restriction: "vegan"), class: "btn-label" do %>
         <% end %>
-        <p> vegan </p>
+        <p> Vegan </p>
         <!-- <button name="vegan" type="submit"> Vegan > </button> -->
       </div>
 
-      <div class="btn veg-pic" style="height: 125px; border-radius: 5px; position: relative;">
-        <%= link_to search_path(restriction: "celiac") do %>
-      <button name="celiac" type="submit" class="btn cel-pic"> Celiac
-      </button>
-      <% end %>
+      <div class="btn cel-pic image-center">
+        <%= link_to search_path(restriction: "celiac"), class: "btn-label" do %>
+        <% end %>
+        <p> Celiac </p>
+        <!-- <button name="vegan" type="submit"> Vegan > </button> -->
+      </div>
 
-      <button name="diabetic" type="submit" class="btn dia-pic">
-        <%= link_to "Diabetic >", search_path(restriction: "diabetic") %>
-      </button>
+      <div class="btn dia-pic image-center">
+        <%= link_to search_path(restriction: "diabetic"), class: "btn-label" do %>
+        <% end %>
+        <p> Diabetic </p>
+        <!-- <button name="vegan" type="submit"> Vegan > </button> -->
+      </div>
 
     </div>
 

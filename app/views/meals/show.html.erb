@@ -24,9 +24,9 @@
         <% end %>
         <!-- Reviews "paths check"-->
         <div>
-          <%= link_to 'Edit', edit_meal_path(@meal) %> |
-          <%= link_to 'Back', restaurant_path(id: @meal.user.id, restriction: @meal.restriction) %> 
-          <%= link_to 'Leave a review', new_meal_review_path(@meal) %>
+          <%= link_to 'Edit', edit_meal_path(@meal), class: "btn btn-outline-secondary mt-3 w-100" %>
+          <%= link_to 'Back', restaurant_path(id: @meal.user.id, restriction: @meal.restriction), class: "btn btn-outline-secondary mt-3 w-100" %>
+          <%= link_to 'Leave a review', new_meal_review_path(@meal), class: "btn btn-outline-secondary mt-3 w-100" %>
         </div>
       </div>
     </div>
