@@ -1,48 +1,60 @@
-<% if @active_orders.any? %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col col-lg-6 p-0 mt-3">
+      <h3 class="text-center">Order Details</h3>
+        <% if @active_orders.any? %>
 
-  <h2>Open orders</h2>
-  <% @active_orders.each do |active_order| %>
-    <ul>
+        <div class="orders-details">
+          <h4>Open orders</h4>
+          <h5>Items</h5>
+          <% @active_orders.each do |active_order| %>
+            <ul>
+              <% active_order.order_items.each do |order_item| %>
+                <li> <%= "#{order_item.meal.name}: R$#{order_item.unit_price},00 x #{order_item.quantity} = R$#{order_item.price},00" %> </li>
+              <% end %>
+              <%= link_to "< Keep buying", restaurant_path(active_order.order_items.first.meal.user_id, restriction: active_order.order_items.last.meal.restriction), class: "" %>
+            </ul>
+            
+          <h5>Payment</h5>
+          <h6 class="total-color">Total R$<%= active_order.price %>,00</h6>
+            <%= link_to "Confirm", order_path(active_order, status: "pending"), method: :patch, class: "btn btn-flat btn-primary" %>
+            <%= link_to "Cancel", order_path(active_order, status: "cancelled"), method: :patch, class: "btn btn-flat btn-danger" %>
+          <% end %>
+        <% end %>
 
-      <% active_order.order_items.each do |order_item| %>
-        <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price} " %> </li>
-      <% end %>
 
-    </ul>
-    <%= link_to "Confirm", order_path(active_order, status: "pending"), method: :patch, class: "btn btn-flat btn-primary" %>
-    <%= link_to "Cancel", order_path(active_order, status: "cancelled"), method: :patch, class: "btn btn-flat btn-danger" %>
-  <% end %>
-<% end %>
+        <% if @pending_orders.any? %>
+          <h2>Pending order</h2>
+          <% @pending_orders.each do |pending_order| %>
+            <ul>
 
+              <% pending_order.order_items.each do |order_item| %>
+                <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price.to_i * order_item.quantity.to_i} " %> </li>
+              <% end %>
 
-<% if @pending_orders.any? %>
-  <h2>Pending order</h2>
-  <% @pending_orders.each do |pending_order| %>
-    <ul>
+            </ul>
+            <%= link_to "Cancel", order_path(pending_order, status: "cancelled"), method: :patch, class: "btn btn-flat btn-danger" %>
+          <% end %>
+        <% end %>
 
-      <% pending_order.order_items.each do |order_item| %>
-        <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price.to_i * order_item.quantity.to_i} " %> </li>
-      <% end %>
+        <% if @confirmed_orders.any? %>
+          <h2>Confimred order</h2>
+          <% @confirmed_orders.each do |confirmed_order| %>
+            <ul>
 
-    </ul>
-    <%= link_to "Cancel", order_path(pending_order, status: "cancelled"), method: :patch, class: "btn btn-flat btn-danger" %>
-  <% end %>
-<% end %>
+              <% confirmed_order.order_items.each do |order_item| %>
+                <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price * order_item.quantity} " %> </li>
+              <% end %>
 
-<% if @confirmed_orders.any? %>
-  <h2>Confimred order</h2>
-  <% @confirmed_orders.each do |confirmed_order| %>
-    <ul>
+            </ul>
+          <% end %>
 
-      <% confirmed_order.order_items.each do |order_item| %>
-        <li> <%= "#{order_item.meal.name}: #{order_item.unit_price} x #{order_item.quantity} = #{order_item.unit_price * order_item.quantity} " %> </li>
-      <% end %>
+        <% end %>
 
-    </ul>
-  <% end %>
-
-<% end %>
-
-<% if current_user.orders.empty? %>
-<h2> No meals are present in your cart! Please add them </h2>
-<% end %>
+            <% if current_user.orders.empty? %>
+            <h2> No meals are present in your cart! Please add them </h2>
+            <% end %>
+          </div>
+    </div>      
+  </div>        
+</div>

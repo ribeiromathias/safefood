@@ -4,7 +4,6 @@
   color: grey;
   background-color: white;
 
-
   .footer {
     display: flex;
     justify-content: space-between;
@@ -37,6 +36,12 @@
     color: white;
     background-color: #1da1f2;
   }
-
-
 }
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;  
+  min-height: 100vh;
+}
+

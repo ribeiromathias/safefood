@@ -6,14 +6,17 @@ class OrderItemsController < ApplicationController
     )
     
     order_item = OrderItem.new(order_item_params)
-    meal = Meal.find(params[:meal_id])
+    @meal = Meal.find(params[:meal_id])
     order_item.order = order
-    order_item.meal = meal
-    order_item.unit_price = meal.offer_price
+    order_item.meal = @meal
+    order_item.unit_price = @meal.offer_price
     authorize order_item
 
-    order_item.save
-    redirect_to orders_path
+    if order_item.save
+      redirect_to orders_path
+    else 
+      render 'meals/show'
+    end
   end
 
   def destroy
