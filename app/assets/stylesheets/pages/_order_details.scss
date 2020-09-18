@@ -23,5 +23,27 @@
     color: #01DF85;
     font-weight: bold;
   }
+
+  .order-tags {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .meal-line {
+    justify-content: space-between;
+  }
+
+  .payment {
+    justify-content: space-between;
+  }
+
+  .keep-btn {
+    border: 1px solid gray;
+    border-radius: 25px;
+    color: gray;
+    justify-content: center;
+    padding: 0;
+    margin: 0 auto;
+  }
 }
 

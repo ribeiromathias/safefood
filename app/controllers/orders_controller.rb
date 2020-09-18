@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
     authorize @order
     if ["pending", "cancelled", "confirmed"].include?(params[:status])
       @order.update(status: params[:status])
-      redirect_to orders_path
+      redirect_to restaurant_path(id: @order.order_items.last.meal.user.id, restriction: @order.order_items.last.meal.restriction)
     else
       redirect_to orders_path, alert: "Something went wrong"
     end
