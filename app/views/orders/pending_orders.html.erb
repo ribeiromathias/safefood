@@ -20,10 +20,10 @@
         <div>
           <%= link_to "Cancel", order_path(pending_order, status: "cancelled"), method: :patch,  class: "d-flex keep-btn p-1 w-50 my-3" %>
         </div>
+        <% end %>
         <div class="d-flex justify-content-center m-1 p-0 ">
         <%= link_to "Keep shopping", root_path, class: "btn btn-flat mt-3 w-100" %>
         </div>
-        <% end %>
    </div>
 </div>
 
