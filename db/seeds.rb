@@ -43,7 +43,7 @@ for_diabetic.save!
 file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQYTIzXXiu9PiczYpDDuI4uhdS7c4XtpqrMlg&usqp=CAU')
 national_tropical_botanical_garden = User.new
 national_tropical_botanical_garden.seller = true
-national_tropical_botanical_garden.name = 'National tropical botanical garden foods'
+national_tropical_botanical_garden.name = 'National Tropical Botanical Garden Foods'
 national_tropical_botanical_garden.phone_number = "87654321"
 national_tropical_botanical_garden.address = "Rio de janeiro"
 national_tropical_botanical_garden.email = 'national_tropical_botanical_garden@gmail.com'
@@ -54,7 +54,7 @@ national_tropical_botanical_garden.save!
 file = URI.open('https://cdn.shopify.com/s/files/1/0227/9073/3888/files/Logo_NaturLife_2019.jpg?height=628&pad_color=fff&v=1549527198&width=1200')
 natur_life = User.new
 natur_life.seller = true
-natur_life.name = 'Natur life'
+natur_life.name = 'Natur Life'
 natur_life.phone_number = "87654321"
 natur_life.address = "Rio de janeiro"
 natur_life.email = 'natur_life@gmail.com'
@@ -65,7 +65,7 @@ natur_life.save!
 file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTPjv_s9ECWy0Vy-SQFTadUDunknqqX-gN6iA&usqp=CAU')
 rica_raiz_vegan = User.new
 rica_raiz_vegan.seller = true
-rica_raiz_vegan.name = 'Rica raiz vegan'
+rica_raiz_vegan.name = 'Rica Raiz Vegan'
 rica_raiz_vegan.phone_number = "87654321"
 rica_raiz_vegan.address = "Rio de janeiro"
 rica_raiz_vegan.email = 'rica_raiz_vegan@gmail.com'
@@ -76,7 +76,7 @@ rica_raiz_vegan.save!
 file = URI.open('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-logo-template-design-3a6c0ed0ab0a8be68ee06430fa018fa5_screen.jpg?ts=1566606306')
 food_factory = User.new
 food_factory.seller = true
-food_factory.name = 'food factory'
+food_factory.name = 'Food Factory'
 food_factory.phone_number = "87654321"
 food_factory.address = "Rio de janeiro"
 food_factory.email = 'food_factory@gmail.com'
@@ -87,7 +87,7 @@ food_factory.save!
 file = URI.open('https://img.freepik.com/vecteurs-libre/bagel-boy-boire-du-cafe_10316-2.jpg?size=338&ext=jpg')
 oli_bagel_shop = User.new
 oli_bagel_shop.seller = true
-oli_bagel_shop.name = "Oli's bagel shop"
+oli_bagel_shop.name = "Oli's Bagel Shop"
 oli_bagel_shop.phone_number = "87654321"
 oli_bagel_shop.address = "Rio de janeiro"
 oli_bagel_shop.email = 'oli_bagel_shop@gmail.com'
@@ -98,7 +98,7 @@ oli_bagel_shop.save!
 file = URI.open('https://idf.org/images/site1/content/Blue-circle.jpg')
 diabetic_nutrition = User.new
 diabetic_nutrition.seller = true
-diabetic_nutrition.name = "Diabetic nutrition"
+diabetic_nutrition.name = "Diabetic Nutrition"
 diabetic_nutrition.phone_number = "87654321"
 diabetic_nutrition.address = "Rio de janeiro"
 diabetic_nutrition.email = 'diabetic_nutrition@gmail.com'
@@ -120,7 +120,7 @@ noma.save!
 puts "Instances destroyed... Creating new buyer user"
 
 milene = User.new
-milene.name = 'milene'
+milene.name = 'Milene'
 milene.phone_number = "12348765"
 milene.address = "Rio de janeiro"
 milene.email = 'milene@gmail.com'
@@ -164,9 +164,9 @@ celiac_fetuccine.save!
 file = URI.open('https://www.chatelaine.com/wp-content/uploads/2017/02/Artisanal-margherita-pizza-1-e1492634150494.jpg')
 pizza = Meal.new
 pizza.user = sem_gluten
-pizza.name = "Pizza margherita with vegan mozzarella and gluten-free dough"
+pizza.name = "Vegan pizza margherita"
 pizza.offer_price = 3
-pizza.description = "Super tasty pizza, family size with gluten-free flour and vegan cheese, basil and olive oil"
+pizza.description = "Gluten-free flour and vegan cheese, basil and olive oil"
 pizza.restriction = "celiac"
 pizza.photo.attach(io: file, filename: 'nes.png')
 pizza.save!
@@ -204,9 +204,9 @@ celiac_apple_pie.save!
 file = URI.open('https://www.seriouseats.com/recipes/images/2011/09/buns%20(2).JPG')
 buns = Meal.new
 buns.user = food_factory
-buns.name = "Burger buns all gluten free"
+buns.name = "Burger buns"
 buns.offer_price = 3
-buns.description = "American burgers buns for celiacs, using only gluten-free flour"
+buns.description = "American buns for celiacs, using only gluten-free flour"
 buns.restriction = "celiac"
 buns.photo.attach(io: file, filename: 'nes.png')
 buns.save!
@@ -236,7 +236,7 @@ vegetable_plate = Meal.new
 vegetable_plate.user = national_tropical_botanical_garden
 vegetable_plate.name = "Plate with fresh garden vegetables: celiacs and vegan"
 vegetable_plate.offer_price = 5
-vegetable_plate.description = "Pre-assembled plate with garden's veggies: tomatoes, carrots, broccoli, fresh salad, and cucumbers"
+vegetable_plate.description = "Tomatoes, carrots, broccoli, fresh salad, and cucumbers"
 vegetable_plate.restriction = "celiac"
 vegetable_plate.photo.attach(io: file, filename: 'nes.png')
 vegetable_plate.save!
@@ -248,7 +248,7 @@ chocolate_for_diabetic = Meal.new
 chocolate_for_diabetic.user = for_diabetic
 chocolate_for_diabetic.name = "Amazing diabetic friendly chocolate"
 chocolate_for_diabetic.offer_price = 2
-chocolate_for_diabetic.description = "These chocolate bars are made with diabetic friendly ingredients: cacao, coconut milk, maple syrup and salt."
+chocolate_for_diabetic.description = "Ingredients: cacao, coconut milk, maple syrup and salt."
 chocolate_for_diabetic.restriction = "diabetic"
 chocolate_for_diabetic.photo.attach(io: file, filename: 'nes.png')
 chocolate_for_diabetic.save!
@@ -256,7 +256,7 @@ chocolate_for_diabetic.save!
 file = URI.open('https://www.thespruceeats.com/thmb/RbASKcyOkFnW_5EYV0H-S_UUskk=/2048x1367/filters:fill(auto,1)/fluffy-homemade-vanilla-cake-995187_18_preview-5afddc4c8023b900369a9cbd.jpeg')
 cake_for_diabetic = Meal.new
 cake_for_diabetic.user = for_diabetic
-cake_for_diabetic.name = "Diabetic friendly cake"
+cake_for_diabetic.name = "Vanillacake"
 cake_for_diabetic.offer_price = 2
 cake_for_diabetic.description = "Classic delicious vanilla cake made diabetic friendly"
 cake_for_diabetic.restriction = "diabetic"
@@ -276,9 +276,9 @@ keto_cobb_salad.save!
 file = URI.open('https://i.pinimg.com/originals/19/e0/c1/19e0c1bdac8889638c0814900988eec4.jpg')
 vegetable_plate = Meal.new
 vegetable_plate.user = national_tropical_botanical_garden
-vegetable_plate.name = "Plate with fresh garden veggies, perfect for diabetics"
+vegetable_plate.name = "Plate with fresh garden vegetables: celiacs and vegan"
 vegetable_plate.offer_price = 5
-vegetable_plate.description = "Pre-assembled plate with garden's veggies: tomatoes, carrots, broccoli, fresh salad, and cucumbers"
+vegetable_plate.description = "Tomatoes, carrots, broccoli, fresh salad, and cucumbers"
 vegetable_plate.restriction = "diabetic"
 vegetable_plate.photo.attach(io: file, filename: 'nes.png')
 vegetable_plate.save!
@@ -288,7 +288,7 @@ fruit_boxes = Meal.new
 fruit_boxes.user = national_tropical_botanical_garden
 fruit_boxes.name = "Seasonal fruit boxes"
 fruit_boxes.offer_price = 5
-fruit_boxes.description = "The good news is that fruit is healthy to eat for people with diabetes: Mango, papaya, ananas, dragon fruit, jackfruits and more"
+fruit_boxes.description = "Good for Diabetics: Mango, papaya, ananas, more.."
 fruit_boxes.restriction = "diabetic"
 fruit_boxes.photo.attach(io: file, filename: 'nes.png')
 fruit_boxes.save!
@@ -298,7 +298,7 @@ assorted_shakes = Meal.new
 assorted_shakes.user = national_tropical_botanical_garden
 assorted_shakes.name = " 5 Nutrional shakes with our fruits: no sugar"
 assorted_shakes.offer_price = 5
-assorted_shakes.description = "Vegan protein shakes: strawberry, mango, jackfruit, blueberry, and banana-chocolate"
+assorted_shakes.description = "Strawberry, mango, jackfruit, blueberry, and banana-chocolate"
 assorted_shakes.restriction = "diabetic"
 assorted_shakes.photo.attach(io: file, filename: 'nes.png')
 assorted_shakes.save!
@@ -306,7 +306,7 @@ assorted_shakes.save!
 file = URI.open('https://www.abelandcole.co.uk/media/3412_28338_x.jpg')
 gnocchi = Meal.new
 gnocchi.user = diabetic_nutrition
-gnocchi.name = "Gnocchi with Spinach and Walnuts: perfect for diabetics"
+gnocchi.name = "Gnocchi with Spinach and Walnuts"
 gnocchi.offer_price = 5
 gnocchi.description = "Made from a diabetic person, for diabetic people"
 gnocchi.restriction = "diabetic"
