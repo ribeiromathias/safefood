@@ -27,4 +27,11 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:total_price, :status)
   end
+
+  def active_order_hash(orders)
+    open_orders = {}
+    orders.each do |order|
+      
+    end
+  end
 end
