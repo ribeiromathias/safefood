@@ -1,0 +1,21 @@
+ <% if @pending_orders.any? %>
+
+          <h4>Pending order</h4>
+            <div class="text-center">
+              <% @pending_orders.each do |pending_order| %>
+                <% pending_order.order_items.each do |order_item| %>
+                  <div class="border border-light m-3 pt-3">
+                    <div>
+                      <%= "#{order_item.meal.name}: $#{order_item.unit_price},00 x #{order_item.quantity} = $#{order_item.unit_price.to_i * order_item.quantity.to_i},00" %>
+                    </div>
+                <% end %>
+                    <div>
+                      <%= link_to "Cancel", order_path(pending_order, status: "cancelled"), method: :patch, class: "btn btn-outline-secondary my-3 w-50", style: "margin: 0 auto;" %>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+          <% else  %>
+          <p class="m-5">You have no orders yet</p>
+
+        <% end %>
