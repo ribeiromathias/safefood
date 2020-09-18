@@ -1,6 +1,7 @@
  <% if @pending_orders.any? %>
 
-          <h4>Pending order</h4>
+
+          <h3 class="text-center">Pending orders</h3>
             <div class="text-center">
               <% @pending_orders.each do |pending_order| %>
                 <% pending_order.order_items.each do |order_item| %>
@@ -19,3 +20,6 @@
           <p class="m-5">You have no orders yet</p>
 
         <% end %>
+        <div class="d-flex justify-content-center m-3">
+        <%= link_to "Keep shopping", root_path, class: "btn btn-flat mt-3 w-50" %>
+        </div>
