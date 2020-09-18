@@ -28,6 +28,7 @@
       </div>
 
         <% if @restaurants.length > 0 %>
+        <p>Your meal can be found in one of this restaurants:</p>
           <% @restaurants&.each do |restaurant| %>
             <%= link_to restaurant_path(restaurant, restriction: params[:restriction]), class: "card-product" do %>
               <div class="card-product-image">
@@ -45,7 +46,7 @@
         <% else %>
           <h6> OPS! No restaurant found: search again! :) </h6>
         <% end  %>
-        
+
       </div>
 
 

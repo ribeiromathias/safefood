@@ -38,13 +38,14 @@
                       <%= "#{order_item.meal.name}: $#{order_item.unit_price},00 x #{order_item.quantity} = $#{order_item.unit_price.to_i * order_item.quantity.to_i},00" %>
                     </div>
                 <% end %>
-                    <div> 
+                    <div>
                       <%= link_to "Cancel", order_path(pending_order, status: "cancelled"), method: :patch, class: "btn btn-outline-secondary my-3 w-50", style: "margin: 0 auto;" %>
                     </div>
                   </div>
               <% end %>
             </div>
-
+          <% else  %>
+          <p class="m-3">Your chart is empty</p>
 
         <% end %>
 
@@ -62,8 +63,8 @@
             <% if current_user.orders.empty? %>
             <h4> No meals are present in your cart! Please add them </h4>
             <% end %>
-    </div>      
-  </div>        
+    </div>
+  </div>
 </div>
 
 
