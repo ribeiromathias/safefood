@@ -146,7 +146,7 @@ celiac_focaccia = Meal.new
 celiac_focaccia.user = sem_gluten
 celiac_focaccia.name = "Gluten free focaccia"
 celiac_focaccia.offer_price = 3
-celiac_focaccia.description = "This rosemary focaccia is made entirely for celiac friends"
+celiac_focaccia.description = "This rosemary focaccia is made entirely celiac friendly"
 celiac_focaccia.restriction = "celiac"
 celiac_focaccia.photo.attach(io: file, filename: 'nes.png')
 celiac_focaccia.save!
@@ -156,7 +156,7 @@ celiac_fetuccine = Meal.new
 celiac_fetuccine.user = sem_gluten
 celiac_fetuccine.name = "Gluten free fetuccine"
 celiac_fetuccine.offer_price = 3
-celiac_fetuccine.description = "This celiac friendly fetuccine are completely handmade"
+celiac_fetuccine.description = "This celiac friendly fetuccine dish is completely handmade"
 celiac_fetuccine.restriction = "celiac"
 celiac_fetuccine.photo.attach(io: file, filename: 'nes.png')
 celiac_fetuccine.save!
@@ -164,7 +164,7 @@ celiac_fetuccine.save!
 file = URI.open('https://www.chatelaine.com/wp-content/uploads/2017/02/Artisanal-margherita-pizza-1-e1492634150494.jpg')
 pizza = Meal.new
 pizza.user = sem_gluten
-pizza.name = "Pizza margherita with vegan mozzarella and glute-free dough"
+pizza.name = "Pizza margherita with vegan mozzarella and gluten-free dough"
 pizza.offer_price = 3
 pizza.description = "Super tasty pizza, family size with gluten-free flour and vegan cheese, basil and olive oil"
 pizza.restriction = "celiac"
@@ -174,9 +174,9 @@ pizza.save!
 file = URI.open('https://www.onceuponachef.com/images/2020/03/Crusty-Bread-760x984.jpg')
 bread = Meal.new
 bread.user = sem_gluten
-bread.name = "Bread loaf"
+bread.name = "Freshly baked bread"
 bread.offer_price = 3
-bread.description = "Bread loaf -gluten free-baked in woods oven"
+bread.description = "Gluten-free baked in a wood oven"
 bread.restriction = "celiac"
 bread.photo.attach(io: file, filename: 'nes.png')
 bread.save!
@@ -194,7 +194,7 @@ cookies.save!
 file = URI.open('https://storcpdkenticomedia.blob.core.windows.net/media/recipemanagementsystem/media/recipe-media-files/recipes/retail/x17/17607-caramel-apple-pie-760x580.jpg?ext=.jpg')
 celiac_apple_pie = Meal.new
 celiac_apple_pie.user = natur_life
-celiac_apple_pie.name = "Crispy glute-free Applepie"
+celiac_apple_pie.name = "Crispy gluten-free Apple pie"
 celiac_apple_pie.offer_price = 3
 celiac_apple_pie.description = "American Apple pie for celiacs, using only gluten-free flour"
 celiac_apple_pie.restriction = "celiac"
@@ -206,7 +206,7 @@ buns = Meal.new
 buns.user = food_factory
 buns.name = "Burger buns all gluten free"
 buns.offer_price = 3
-buns.description = "American burgers bread for celiacs, using only gluten-free flour"
+buns.description = "American burgers buns for celiacs, using only gluten-free flour"
 buns.restriction = "celiac"
 buns.photo.attach(io: file, filename: 'nes.png')
 buns.save!
@@ -224,9 +224,9 @@ vegan_burgers.save!
 file = URI.open('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/summer-rolls-recipe-1586457460.jpg?crop=0.951xw:0.635xh;0.0119xw,0.194xh&resize=980:*')
 vegan_summer_rolls = Meal.new
 vegan_summer_rolls.user = national_tropical_botanical_garden
-vegan_summer_rolls.name = "Summer rools vegan and celiac friendly"
+vegan_summer_rolls.name = "Summer rolls vegan and celiac friendly"
 vegan_summer_rolls.offer_price = 5
-vegan_summer_rolls.description = "Homemade burgers celiac and vegan friendly."
+vegan_summer_rolls.description = "Celiac and vegan friendly."
 vegan_summer_rolls.restriction = "celiac"
 vegan_summer_rolls.photo.attach(io: file, filename: 'nes.png')
 vegan_summer_rolls.save!
@@ -248,7 +248,7 @@ chocolate_for_diabetic = Meal.new
 chocolate_for_diabetic.user = for_diabetic
 chocolate_for_diabetic.name = "Amazing diabetic friendly chocolate"
 chocolate_for_diabetic.offer_price = 2
-chocolate_for_diabetic.description = "These chocolate bars are made with diabetic ingredients: cacao, coconut milk, maple syrup and salt."
+chocolate_for_diabetic.description = "These chocolate bars are made with diabetic friendly ingredients: cacao, coconut milk, maple syrup and salt."
 chocolate_for_diabetic.restriction = "diabetic"
 chocolate_for_diabetic.photo.attach(io: file, filename: 'nes.png')
 chocolate_for_diabetic.save!
@@ -276,7 +276,7 @@ keto_cobb_salad.save!
 file = URI.open('https://i.pinimg.com/originals/19/e0/c1/19e0c1bdac8889638c0814900988eec4.jpg')
 vegetable_plate = Meal.new
 vegetable_plate.user = national_tropical_botanical_garden
-vegetable_plate.name = "Plate with fresh garden veggies, perfect for diabetic friends"
+vegetable_plate.name = "Plate with fresh garden veggies, perfect for diabetics"
 vegetable_plate.offer_price = 5
 vegetable_plate.description = "Pre-assembled plate with garden's veggies: tomatoes, carrots, broccoli, fresh salad, and cucumbers"
 vegetable_plate.restriction = "diabetic"
@@ -303,7 +303,7 @@ assorted_shakes.restriction = "diabetic"
 assorted_shakes.photo.attach(io: file, filename: 'nes.png')
 assorted_shakes.save!
 
-file = URI.open('https://www.asweetpeachef.com/wp-content/uploads/2017/05/high-protein-fruit-smoothie-recipes-13.jpg')
+file = URI.open('https://www.abelandcole.co.uk/media/3412_28338_x.jpg')
 gnocchi = Meal.new
 gnocchi.user = diabetic_nutrition
 gnocchi.name = "Gnocchi with Spinach and Walnuts: perfect for diabetics"
@@ -313,12 +313,12 @@ gnocchi.restriction = "diabetic"
 gnocchi.photo.attach(io: file, filename: 'nes.png')
 gnocchi.save!
 
-file = URI.open('https://www.asweetpeachef.com/wp-content/uploads/2017/05/high-protein-fruit-smoothie-recipes-13.jpg')
+file = URI.open('https://www.onceuponachef.com/images/2018/03/Breakfast-Burritos-760x569.jpg')
 burritos = Meal.new
 burritos.user = diabetic_nutrition
-burritos.name = "burritos mexican style: perfect for diabetics"
+burritos.name = "Burritos mexican style: perfect for diabetics"
 burritos.offer_price = 5
-burritos.description = "High quality diabetic food"
+burritos.description = "Tradiational mexican food for diabetic people"
 burritos.restriction = "diabetic"
 burritos.photo.attach(io: file, filename: 'nes.png')
 burritos.save!
@@ -330,7 +330,7 @@ falafel = Meal.new
 falafel.user = national_tropical_botanical_garden
 falafel.name = "Vegan falafel"
 falafel.offer_price = 3
-falafel.description = "Spiced and blended cheeckpees deepfried for vegan perfection."
+falafel.description = "Spiced and blended chickpeas deep fried to vegan perfection."
 falafel.restriction = "vegan"
 falafel.photo.attach(io: file, filename: 'nes.png')
 falafel.save!
@@ -338,9 +338,9 @@ falafel.save!
 file = URI.open('https://www.recipetineats.com/wp-content/uploads/2017/05/Lasagne-recipe-3-main-square.jpg?w=500&h=375&crop=1')
 vegan_lasagne = Meal.new
 vegan_lasagne.user = national_tropical_botanical_garden
-vegan_lasagne.name = "Vegan lasagne"
+vegan_lasagne.name = "Vegan lasagna"
 vegan_lasagne.offer_price = 4
-vegan_lasagne.description = "Homemade lasagne with vegan besciamella and cheese."
+vegan_lasagne.description = "Homemade lasagna with vegan besciamella and cheese."
 vegan_lasagne.restriction = "vegan"
 vegan_lasagne.photo.attach(io: file, filename: 'nes.png')
 vegan_lasagne.save!
@@ -358,9 +358,9 @@ vegan_burgers.save!
 file = URI.open('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/summer-rolls-recipe-1586457460.jpg?crop=0.951xw:0.635xh;0.0119xw,0.194xh&resize=980:*')
 vegan_summer_rolls = Meal.new
 vegan_summer_rolls.user = national_tropical_botanical_garden
-vegan_summer_rolls.name = "Summer rools"
+vegan_summer_rolls.name = "Vietnanese spring rolls"
 vegan_summer_rolls.offer_price = 5
-vegan_summer_rolls.description = "Homemade burgers completely vegan."
+vegan_summer_rolls.description = "Freshly made traditional spring rolls (vegan)."
 vegan_summer_rolls.restriction = "vegan"
 vegan_summer_rolls.photo.attach(io: file, filename: 'nes.png')
 vegan_summer_rolls.save!
@@ -368,7 +368,7 @@ vegan_summer_rolls.save!
 file = URI.open('https://i.pinimg.com/originals/19/e0/c1/19e0c1bdac8889638c0814900988eec4.jpg')
 vegetable_plate = Meal.new
 vegetable_plate.user = national_tropical_botanical_garden
-vegetable_plate.name = "Plate with fresh vegetable from our garden"
+vegetable_plate.name = "Plate with fresh vegetables from our garden"
 vegetable_plate.offer_price = 5
 vegetable_plate.description = "Pre-assembled plate with garden's veggies: tomatoes, carrots, broccoli, fresh salad, and cucumbers"
 vegetable_plate.restriction = "vegan"
@@ -380,7 +380,7 @@ fruit_boxes = Meal.new
 fruit_boxes.user = national_tropical_botanical_garden
 fruit_boxes.name = "Seasonal fruit boxes"
 fruit_boxes.offer_price = 5
-fruit_boxes.description = "Mango, papaya, ananas, dragon fruit, jackfruits and more"
+fruit_boxes.description = "Mango, papaya, ananas, dragon fruit, jackfruit and more"
 fruit_boxes.restriction = "vegan"
 fruit_boxes.photo.attach(io: file, filename: 'nes.png')
 fruit_boxes.save!
@@ -401,7 +401,7 @@ vegan_soup = Meal.new
 vegan_soup.user = national_tropical_botanical_garden
 vegan_soup.name = "Soup made from our garden's veggies"
 vegan_soup.offer_price = 5
-vegan_soup.description = "This "
+vegan_soup.description = "Creamy vegetable soup made everyday"
 vegan_soup.restriction = "vegan"
 vegan_soup.photo.attach(io: file, filename: 'nes.png')
 vegan_soup.save!
