@@ -4,18 +4,23 @@
         <% if @active_orders.any? %>
 
         <div class="orders-details">
-          <h3 class="text-center">Order Details</h3>
-          <h5 class="text-center py-3">Items:</h5>
+        <h3 class="text-center">Order Details</h3>
+        <div class="order-tags d-flex space-around">
+          <h5 class="py-3">Qt.</h5>
+          <h5 class="py-3">Items</h5>
+          <h5 class="py-3">Price</h5>  
+        </div>
           <% @active_orders.each do |active_order| %>
             <ul>
               <% active_order.order_items.each do |order_item| %>
-                <li class="pb-3"> <strong><%= "#{order_item.quantity} x #{order_item.meal.name}"%> </strong> <%= "at $#{order_item.unit_price},00  = $#{order_item.price},00" %> </li>
+                <li class="pb-3 d-flex meal-line"> <%= "#{order_item.quantity}"%> <strong> <%= "#{order_item.meal.name}"%> </strong> <%= "$#{order_item.price},00" %> </li>
               <% end %>
-              <%= link_to "< Keep buying", restaurant_path(active_order.order_items.first.meal.user_id, restriction: active_order.order_items.last.meal.restriction), class: "border border-dark " %>
             </ul>
-
-          <h5>Payment</h5>
-          <h6 class="total-color">Total $<%= active_order.price %>,00</h6>
+          <div class="payment d-flex">
+            <h5>Payment</h5>
+            <h6 class="total-color">Total $<%= active_order.price %>,00</h6>
+          </div>
+              <%= link_to "Order more", restaurant_path(active_order.order_items.first.meal.user_id, restriction: active_order.order_items.last.meal.restriction), class: "d-flex keep-btn p-1 w-50 my-4 mb-4" %>
           <div class="btns">
             <%= link_to "Confirm", order_path(active_order, status: "pending"), method: :patch, class: "btn btn-flat mt-3" %>
             <%= link_to "Cancel", order_path(active_order, status: "cancelled"), method: :patch, class: "btn btn-outline-secondary mt-3 w-100" %>
