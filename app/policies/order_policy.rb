@@ -25,5 +25,9 @@ class OrderPolicy < ApplicationPolicy
     user.seller?
   end
 
+  def pending_orders?
+    true
+  end
+
 
 end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   }
   root to: 'pages#home'
   get '/search', to: 'pages#search'
+  get '/pending_orders', to: 'orders#pending_orders', as: 'pending'
 
   resources :restaurants, only: [:show]
 
